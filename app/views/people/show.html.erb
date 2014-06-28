@@ -1,0 +1,8 @@
+<h1><%= @person.full_name %></h1>
+<p><%= @person.description %></p>
+<p><%= @person.website %></p>
+<p><%= @person.profile_picture %></p>
+<p><%= @person.birth_date %></p>
+<p><%= @person.twitter_handle %></p>
+<p><%= link_to "Edit Person", edit_person_path(@person) %></p>
+<p><%= link_to "Delete Person", person_path(@person), method: :delete %></p>

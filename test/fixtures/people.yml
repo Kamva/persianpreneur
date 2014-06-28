@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  description: MyText
+  investor: false
+  entrepreneur: false
+  website: MyString
+  profile_picture: MyString
+  birth_date: 2014-06-24
+  location: MyString
+  twitter_handle: MyString
+  published: false
+
+two:
+  full_name: MyString
+  description: MyText
+  investor: false
+  entrepreneur: false
+  website: MyString
+  profile_picture: MyString
+  birth_date: 2014-06-24
+  location: MyString
+  twitter_handle: MyString
+  published: false

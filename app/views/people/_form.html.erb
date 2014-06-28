@@ -1,0 +1,38 @@
+<%= form_for(@person) do |f| %>
+	<ul>
+	<% @person.errors.full_messages.each do |error| %>
+		<li><%= error %></li>
+	<% end %>
+	</ul>
+	<div class="row">
+	  <div class="large-12 columns"><%= f.label :full_name %></div>
+	</div>
+	<div class="row">
+		<div class="large-4 columns"><%= f.text_field :full_name %></div>
+	</div>
+	<div class="row">
+	  <div class="large-12 columns"><%= f.label :description %></div>
+	</div>
+	<div class="row">
+		<div class="large-4 columns"><%= f.text_field :description %></div>
+	</div>	
+	<%= f.check_box :investor %>
+	<%= f.label :investor %>
+	<%= f.check_box :entrepreneur %>
+	<%= f.label :entrepreneur %>
+	<%= f.label :birth_date %>
+	<%= f.date_select :birth_date, :start_year => 1920, :end_year => 2000 %>
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+	<%= f.label :twitter_handle %>
+	<%= f.text_field :twitter_handle %>
+	<%= f.label :website %>
+	<%= f.text_field :website %>
+	<%= f.label :profile_picture %>
+	<%= f.file_field :profile_picture %>
+	<% if logged_in? %>
+		<%= f.check_box :published %>
+		<%= f.label :published %>
+	<% end %>
+	<%= f.submit %>
+<% end %>

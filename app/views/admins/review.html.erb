@@ -1,0 +1,27 @@
+<h1>Review Suggestions</h1>
+
+<% if @people.size > 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th>Person</th>
+        <th colspan="4">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @people.each do |person| %>
+        <tr>
+          <td><%= person.full_name %></td>
+          <td><%= link_to 'Show', person %></td>
+          <td><%= link_to 'Edit', edit_person_path(person) %></td>
+          <td><%= link_to 'Destroy', person, method: :delete %></td>
+          <td><%= link_to 'Publish', "/admin/publish/#{person.id}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h4>No New Suggestions</h4>
+<% end %>
+
