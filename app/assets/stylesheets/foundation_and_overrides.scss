@@ -300,7 +300,6 @@
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;
 // $block-grid-default-spacing: rem-calc(20);
-$block-grid-default-spacing: 0;
 // $align-block-grid-to-grid: false;
 
 
@@ -1297,5 +1296,8 @@ $block-grid-default-spacing: 0;
 // $range-slider-handle-round: $global-rounded;
 // $range-slider-handle-bg-hover-color: scale-color($primary-color, $lightness: -12%);
 // $range-slider-handle-cursor: pointer;
+
+$topbar-margin-bottom: 20px;
+$block-grid-default-spacing: 0;
 
 @import 'foundation';

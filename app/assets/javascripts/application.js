@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.wookmark
+//= require jquery.powertip
 
 $(function(){ $(document).foundation(); });

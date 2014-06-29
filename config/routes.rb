@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/admin/login' => 'admin_sessions#new'
   get '/admin/logout' => 'admin_sessions#destroy'
   get '/admin/review', :to => 'admins#review'
+  match '/people/:id/destroy' => 'people#destroy', via: [:delete]
+  match '/admins/:id/destroy' => 'admins#destroy', via: [:delete]
   match '/admin/publish/:id' => 'admins#publish', via: [:get]
 
 

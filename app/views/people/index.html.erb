@@ -1,21 +1,28 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-<h1>People</h1>
+<div class="row text-center">
+  <h1>People</h1>
+</div>
 
-<div id="add_person"><%= link_to "Add A New Person", new_person_path, class: "new_person" %></div>
+<div id="add_person"><%= link_to "Add Yourself to the List", new_person_path, class: "new_person" %></div>
 
 <div id="main">
   <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">
     <% @people.each do |person| %>
-          <li>
-              <a href="#" data-dropdown="hover1" data-options="is_hover:true"><%= image_tag(person.profile_picture.thumb.url) %></a>
-              <ul id="hover" class="f.dropdown" data-dropdown-content>
+            <li id=<%= "tooltip" %>>
+              <div>
+                <%= link_to(image_tag(person.profile_picture.thumb.url))%>
+              </div>
+              <ul class="display-none">
                 <li><%= person.full_name %></li>
+                <li>
+                  <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %>
+                </li>
                 <li><%= person.description %></li>
                 <li><%= person.location %></li>
-                <li><%= link_to("http:://twitter.com/#{person.twitter_handle}", "Twitter") %></li>
+                <li><%= link_to("Twitter", "http://twitter.com/#{person.twitter_handle}") %></li>
               </ul>
-          </li>
+            </li>
     <% end %>
   </ul>
 </div>

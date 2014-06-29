@@ -38,7 +38,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'birthday', '~> 0.3.0'
 gem 'foundation-rails'
 gem 'sorcery'
 gem 'carrierwave'

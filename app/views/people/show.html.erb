@@ -1,8 +1,59 @@
-<h1><%= @person.full_name %></h1>
-<p><%= @person.description %></p>
-<p><%= @person.website %></p>
-<p><%= @person.profile_picture %></p>
-<p><%= @person.birth_date %></p>
-<p><%= @person.twitter_handle %></p>
-<p><%= link_to "Edit Person", edit_person_path(@person) %></p>
-<p><%= link_to "Delete Person", person_path(@person), method: :delete %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <%= image_tag(@person.profile_picture.normal.url) %>
+	</div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <h2><%= @person.full_name %></h2>
+	</div>
+</div>
+
+<% if @person.entrepreneur %>
+	<div class="row">
+	  <div class="small-12 columns">
+	    <h3><%= "Entrepreneur" %></h3>
+		</div>
+	</div>
+<% end %>
+
+<% if @person.investor %>
+	<div class="row">
+	  <div class="small-12 columns">
+	    <h3><%= "Investor" %></h3>
+		</div>
+	</div>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h3><%= @person.description %></h3>
+	</div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <h3><%= @person.website %></h3>
+	</div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h3><%= @person.birth_date %></h3>
+	</div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <h3><%= @person.twitter_handle %></h3>
+	</div>
+</div>
+
+
+
+<div class="row"> 
+	<div class="medium-1 columns">
+		<%= link_to("Edit", edit_person_path(@person), class: "button tiny radius success") %>
+	</div>
+	<div class="medium-11 columns">
+		<%= link_to("Destroy", "people/#{@person.id}/destroy", method: :delete, class: "button tiny radius alert") %>
+	</div>
+</div>

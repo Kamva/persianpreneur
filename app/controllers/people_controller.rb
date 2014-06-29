@@ -21,7 +21,7 @@ class PeopleController < ApplicationController
 		@person = Person.new(person_params)
 		if @person.save
 			redirect_to root_path
-			flash.notice = "Person '#{@person.full_name}' created!"
+			flash.notice = "Person '#{@person.full_name}' was successfully created."
 		else
 			render('new')
 		end
@@ -35,7 +35,7 @@ class PeopleController < ApplicationController
 		@person = Person.find(params[:id])
 		if @person.update(person_params)
 			redirect_to admin_manage_people_path
-			flash.notice = "Person '#{@person.full_name}' updated!"
+			flash.notice = "Person '#{@person.full_name}' was successfully updated."
 		else
 			render 'edit'
 		end
@@ -43,7 +43,7 @@ class PeopleController < ApplicationController
 
 	def destroy
 		@person = Person.find(params[:id]).destroy
-		flash.notice = "Person '#{@person.full_name}' deleted!"
+		flash.notice = "Person '#{@person.full_name}' was successfully destroyed."
 		redirect_to admin_manage_people_path
 	end
 

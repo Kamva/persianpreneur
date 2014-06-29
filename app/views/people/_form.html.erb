@@ -1,38 +1,79 @@
 <%= form_for(@person) do |f| %>
-	<ul>
-	<% @person.errors.full_messages.each do |error| %>
-		<li><%= error %></li>
-	<% end %>
-	</ul>
-	<div class="row">
-	  <div class="large-12 columns"><%= f.label :full_name %></div>
-	</div>
-	<div class="row">
-		<div class="large-4 columns"><%= f.text_field :full_name %></div>
-	</div>
-	<div class="row">
-	  <div class="large-12 columns"><%= f.label :description %></div>
-	</div>
-	<div class="row">
-		<div class="large-4 columns"><%= f.text_field :description %></div>
-	</div>	
-	<%= f.check_box :investor %>
-	<%= f.label :investor %>
-	<%= f.check_box :entrepreneur %>
-	<%= f.label :entrepreneur %>
-	<%= f.label :birth_date %>
-	<%= f.date_select :birth_date, :start_year => 1920, :end_year => 2000 %>
-	<%= f.label :location %>
-	<%= f.text_field :location %>
-	<%= f.label :twitter_handle %>
-	<%= f.text_field :twitter_handle %>
-	<%= f.label :website %>
-	<%= f.text_field :website %>
-	<%= f.label :profile_picture %>
-	<%= f.file_field :profile_picture %>
-	<% if logged_in? %>
-		<%= f.check_box :published %>
-		<%= f.label :published %>
-	<% end %>
-	<%= f.submit %>
+  <% if @person.errors.any? %>
+    <div class="row">
+      <div class="small-12 columns" id="error_explanation"></div>
+        <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+        <ul>
+        <% @person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="medium-4 columns">
+        <%= f.label :full_name %>
+        <%= f.text_field :full_name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.check_box :investor %>
+			<%= f.label :investor %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.check_box :entrepreneur %>
+			<%= f.label :entrepreneur %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.label :birth_date %>
+			<%= f.date_select :birth_date, :start_year => 1930, :end_year => 2000 %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.label :location %>
+			<%= f.text_field :location %>	    		
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.label :twitter_handle %>
+			<%= f.text_field :twitter_handle %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.label :website %>
+			<%= f.text_field :website %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.label :profile_picture %>
+			<%= f.file_field :profile_picture %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+			<%= f.check_box :published %>
+			<%= f.label :published %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-4 columns">
+      <%= f.submit class: "button tiny radius success" %>
+    </div>
+  </div>
 <% end %>

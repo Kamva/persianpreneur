@@ -1,7 +1,14 @@
-<p>
-  <strong>Email:</strong>
-  <%= @admin.email %>
-</p>
+<div class="row">
+  <div class="small-2 columns">
+    <h2><%= @admin.email %></h2>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_admin_path(@admin) %> |
-<%= link_to 'Back', admin_manage_admins_path %>
+<div class="row"> 
+	<div class="medium-1 columns">
+		<%= link_to("Edit", edit_admin_path(@admin), class: "button tiny radius success") %>
+	</div>
+	<div class="medium-11 columns">
+		<%= link_to("Destroy", "/admins/#{@admin.id}/destroy", method: :delete, class: "button tiny radius alert") %>
+	</div>
+</div>

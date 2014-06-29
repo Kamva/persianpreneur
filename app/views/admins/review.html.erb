@@ -1,27 +1,38 @@
-<h1>Review Suggestions</h1>
+<div class="row title">
+  <div class="small-8 columns">
+    <h1>Review Suggestions</h1>
+  </div>
+</div>
 
 <% if @people.size > 0 %>
-  <table>
-    <thead>
-      <tr>
-        <th>Person</th>
-        <th colspan="4">Actions</th>
-      </tr>
-    </thead>
+  <div class="row">
+    <div class="small-8 columns">
+      <table>
+        <thead>
+          <tr>
+            <th>Person</th>
+            <th class="text-center" colspan="4">Actions</th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <% @people.each do |person| %>
-        <tr>
-          <td><%= person.full_name %></td>
-          <td><%= link_to 'Show', person %></td>
-          <td><%= link_to 'Edit', edit_person_path(person) %></td>
-          <td><%= link_to 'Destroy', person, method: :delete %></td>
-          <td><%= link_to 'Publish', "/admin/publish/#{person.id}" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <tbody>
+          <% @people.each do |person| %>
+            <tr>
+              <td><%= person.full_name %></td>
+              <td><%= link_to 'Show', person %></td>
+              <td><%= link_to 'Edit', edit_person_path(person) %></td>
+              <td><%= link_to 'Destroy', person, method: :delete %></td>
+              <td><%= link_to 'Publish', "/admin/publish/#{person.id}" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 <% else %>
-  <h4>No New Suggestions</h4>
+  <div class="row">
+    <div class="small-8 columns">
+      <h4>No New Suggestions</h4>
+    </div>
+  </div>
 <% end %>
-

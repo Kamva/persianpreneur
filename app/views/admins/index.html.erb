@@ -1,25 +1,35 @@
-<h1>Listing admins</h1>
+<div class="row title">
+  <div class="small-8 columns">
+    <h1>Manage Admins</h1>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>      
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="small-8 columns">
+    <%= link_to("Add An Admin", new_admin_path, class: "button tiny radius success") %>
+  </div>
+</div>
 
-  <tbody>
-    <% @admins.each do |admin| %>
-      <tr>
-        <td><%= admin.email %></td>
-        <td><%= link_to 'Show', admin %></td>
-        <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-        <td><%= link_to 'Destroy', admin, method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="small-8 columns">
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th class="text-center" colspan="3">Actions</th>
+        </tr>
+      </thead>
 
-<br>
-
-<%= link_to 'Add an Admin', new_admin_path %>
+      <tbody>
+        <% @admins.each do |admin| %>
+          <tr>
+            <td><%= admin.email %></td>
+            <td><%= link_to 'Show', admin %></td>
+            <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
+            <td><%= link_to 'Destroy', "/admins/#{admin.id}/destroy", method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

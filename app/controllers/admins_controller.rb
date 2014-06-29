@@ -30,7 +30,7 @@ class AdminsController < ApplicationController
 
     respond_to do |format|
       if @admin.save
-        format.html { redirect_to admin_manage_admins_path, notice: 'Admin was successfully created.' }
+        format.html { redirect_to admin_manage_admins_path, notice: "Admin '#{@admin.email}' was successfully created." }
         format.json { render :show, status: :created, location: @admin }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class AdminsController < ApplicationController
   def update
     respond_to do |format|
       if @admin.update(admin_params)
-        format.html { redirect_to admin_manage_admins_path, notice: 'Admin was successfully updated.' }
+        format.html { redirect_to admin_manage_admins_path, notice: "Admin '#{@admin.email}' was successfully updated." }
         format.json { render :show, status: :ok, location: @admin }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class AdminsController < ApplicationController
   def destroy
     @admin.destroy
     respond_to do |format|
-      format.html { redirect_to admin_manage_admins_path, notice: 'Admin was successfully destroyed.' }
+      format.html { redirect_to admin_manage_admins_path, notice: "Admin '#{@admin.email}' was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,7 @@ class AdminsController < ApplicationController
   def publish
     @person = Person.find(params[:id])
     @person.update_attributes(published: true)
+    flash.notice = "Person '#{@person.full_name}' was successfully published."
     redirect_to admin_review_path
   end
 

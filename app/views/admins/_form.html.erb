@@ -1,29 +1,37 @@
 <%= form_for(@admin) do |f| %>
   <% if @admin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
-
-      <ul>
-      <% @admin.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="row">
+      <div class="small-12 columns" id="error_explanation"></div>
+        <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+        <ul>
+        <% @admin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="row">
+    <div class="medium-4 columns field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
+  <div class="row">
+    <div class="medium-4 columns field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+  <div class="row">
+    <div class="medium-4 columns field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="medium-4 columns actoins">
+      <%= f.submit class: "button tiny radius success" %>
+    </div>
   </div>
 <% end %>
