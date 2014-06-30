@@ -3,8 +3,11 @@
 <div class="row text-center">
   <h1>People</h1>
 </div>
-
-<div id="add_person"><%= link_to "Add Yourself to the List", new_person_path, class: "new_person" %></div>
+  <div class="row">
+    <div class="small-8 columns">
+      <div id="add_person"><%= link_to "Add Yourself to the List", new_person_path, class: "new_person button" %></div>
+    </div>
+  </div>
 
 <div id="main">
   <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">

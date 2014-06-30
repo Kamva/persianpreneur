@@ -2,12 +2,12 @@
   <% if @admin.errors.any? %>
     <div class="row">
       <div class="small-12 columns" id="error_explanation"></div>
-        <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
-        <ul>
+        <div data-alert class="alert-box alert radius"><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</div>
+       
         <% @admin.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <h5 class="small-offset-1"><small><%= message %></small></h5>  
         <% end %>
-        </ul>
+        
     </div>
   <% end %>
 
