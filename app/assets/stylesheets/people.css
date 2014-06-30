@@ -1,0 +1,7 @@
+.hidden {
+	display: none;
+}
+
+ul.hidden.tipcontent {
+	list-style-type: none;
+}
