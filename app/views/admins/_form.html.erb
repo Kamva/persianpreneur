@@ -13,8 +13,11 @@
 
   <div class="row">
     <div class="medium-4 columns field">
+      <div class="email-field">
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, placeholder: 'example@domain.com',required: '' %>
+        <%#= content_tag(:small, "Please enter a valid email address", class: "error") %>
+      </div>
     </div>
   </div>
   <div class="row">
