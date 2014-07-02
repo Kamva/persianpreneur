@@ -1,28 +1,56 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
 <div class="row text-center">
   <h1>People</h1>
 </div>
 
 <div id="add_person"><%= link_to "Add Yourself to the List", new_person_path, class: "new_person" %></div>
 
+<style type="text/css">
+a.fa {
+  padding-bottom: 10px;
+}
+</style>
+
 <div id="main">
-  <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">
+  <ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-10">
     <% @people.each do |person| %>
-            <li id=<%= "tooltip" %>>
-              <div>
+            <li class="tooltip-person">
+              <div class="image-wrapper">
                 <%= link_to(image_tag(person.profile_picture.thumb.url))%>
               </div>
-              <ul class="display-none">
-                <li><%= person.full_name %></li>
-                <li>
-                  <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %>
-                </li>
-                <li><%= person.description %></li>
-                <li><%= person.location %></li>
-                <li><%= link_to("Twitter", "http://twitter.com/#{person.twitter_handle}") %></li>
-              </ul>
+              <div class="hidden tipcontent">
+                <h5>
+                  <%= person.full_name + ", "%>
+                  <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %> 
+                </h5>
+                <div>
+                  <%= link_to "", "http://#{person.website}", :class => ['fa', 'fa-home', 'fa-lg'] %>
+                  <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter-square', 'fa-lg'] %>
+                </div>
+                <div>
+                  <%= person.description %>
+                </div>
+                <div>
+                  <%= person.location %>
+                </div>
+              </div>
             </li>
     <% end %>
   </ul>
 </div>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    $('li.tooltip-person').each(function() {
+      var $img = $(this).find('div.image-wrapper');
+      var tipContent = $('div.hidden.tipcontent', this).html();
+      $img.attr('title', tipContent);
+      $img.powerTip({
+        placement: 'nw-alt',
+        mouseOnToPopup: true,
+        smartPlacement: true
+      });
+    });
+  });
+</script>

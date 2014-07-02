@@ -1,3 +1,8 @@
 .title {
 	padding-bottom: 50px;
 }
+
+.column, columns {
+	padding-left: 0;
+	padding-right: 0;
+}

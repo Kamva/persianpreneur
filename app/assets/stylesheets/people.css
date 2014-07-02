@@ -2,6 +2,9 @@
 	display: none;
 }
 
-ul.hidden.tipcontent {
-	list-style-type: none;
+#powerTip {
+	white-space: normal;
+	width: 240px;
 }
+
+
