@@ -2,19 +2,22 @@
   <% if @admin.errors.any? %>
     <div class="row">
       <div class="small-12 columns" id="error_explanation"></div>
-        <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
-        <ul>
+        <div data-alert class="alert-box alert radius"><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</div>
+       
         <% @admin.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <h5 class="small-offset-1"><small><%= message %></small></h5>  
         <% end %>
-        </ul>
+        
     </div>
   <% end %>
 
   <div class="row">
     <div class="medium-4 columns field">
+      <div class="email-field">
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, placeholder: 'example@domain.com',required: '' %>
+        <%#= content_tag(:small, "Please enter a valid email address", class: "error") %>
+      </div>
     </div>
   </div>
   <div class="row">
