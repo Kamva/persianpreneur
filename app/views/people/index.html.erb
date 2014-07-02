@@ -23,7 +23,7 @@
                   <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %> 
                 </h5>
                 <div>
-                  <%= link_to "", "http://#{person.website}", :class => ['fa', 'fa-home', 'fa-lg'] %>
+                  <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
                   <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter-square', 'fa-lg'] %>
                 </div>
                 <div>
