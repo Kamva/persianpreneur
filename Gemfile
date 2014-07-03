@@ -44,5 +44,5 @@ gem 'meta_request',			group: :development
 gem 'foundation-rails'
 gem 'sorcery'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', :require => 'RMagick'
 gem 'font-awesome-sass'
