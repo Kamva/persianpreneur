@@ -1,15 +1,20 @@
+<% title "PersianPreneur" %>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-8 columns">
     <h1>People</h1>
   </div>
 </div>
-  <div class="row">
-    <div class="small-4 columns">
-      <div id="add_person"><%= link_to "Add Yourself to the List", new_person_path, class: "new_person button small" %></div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= link_to "Add Yourself To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small'] %>
+    <div id="addPersonModal" class="reveal-modal" data-reveal>
+      <% @person = Person.new %>
+      <%= render partial: '/people/form' %>
+      <a class="close-reveal-modal">&#215;</a>
     </div>
   </div>
-
+</div>
 <div id="main">
   <ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-10">
     <% @people.each do |person| %>
@@ -23,8 +28,12 @@
                   <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %> 
                 </h5>
                 <div>
-                  <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
-                  <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter-square', 'fa-lg'] %>
+                  <% unless person.website.blank? %>
+                    <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
+                  <% end %>
+                  <% unless person.twitter_handle.blank? %>
+                    <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter-square', 'fa-lg'] %>
+                  <% end %>
                 </div>
                 <div>
                   <%= person.description %>
@@ -37,10 +46,8 @@
     <% end %>
   </ul>
 </div>
-
 <script type="text/javascript">
-
-  $(document).ready(function() {
+  $(document).ready(function() {    
     $('li.tooltip-person').each(function() {
       var $img = $(this).find('div.image-wrapper');
       var tipContent = $('div.hidden.tipcontent', this).html();

@@ -12,9 +12,5 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
- *= require jquery.powertip-light
- *= require people
- *= require main
  *= require font-awesome
  */

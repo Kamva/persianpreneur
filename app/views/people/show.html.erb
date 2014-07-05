@@ -1,6 +1,7 @@
+<% title "PersianPreneur | Show Person" %>
 <div class="row">
   <div class="small-12 columns">
-    <%= image_tag(@person.profile_picture.normal.url) %>
+    <%= image_tag(@person.profile_picture.normal.url) %>    
 	</div>
 </div>
 <div class="row">
@@ -8,7 +9,14 @@
     <h2><%= @person.full_name %></h2>
 	</div>
 </div>
-
+<div class="row">
+  <div class="small-12 columns">
+    <div>
+      <%= link_to "", @person.website, :class => ['fa', 'fa-home', 'fa-2x'] %>
+      <%= link_to "", "http://twitter.com/#{@person.twitter_handle}", :class => ['fa', 'fa-twitter-square', 'fa-2x'] %>
+    </div>    
+	</div>
+</div>
 <% if @person.entrepreneur %>
 	<div class="row">
 	  <div class="small-12 columns">
@@ -24,7 +32,6 @@
 		</div>
 	</div>
 <% end %>
-
 <div class="row">
   <div class="small-12 columns">
     <h3><%= @person.description %></h3>
@@ -32,23 +39,9 @@
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <h3><%= @person.website %></h3>
-	</div>
-</div>
-
-<div class="row">
-  <div class="small-12 columns">
     <h3><%= @person.birth_date %></h3>
 	</div>
 </div>
-<div class="row">
-  <div class="small-12 columns">
-    <h3><%= @person.twitter_handle %></h3>
-	</div>
-</div>
-
-
-
 <div class="row"> 
 	<div class="medium-1 columns">
 		<%= link_to("Edit", edit_person_path(@person), class: "button tiny radius success") %>

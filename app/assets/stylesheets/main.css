@@ -5,3 +5,13 @@
 a.fa {
   padding-bottom: 10px;
 }
+
+.datetime select:nth-child(1) {
+	width: 75px;
+}
+.datetime select:nth-child(2) {
+	width: 70px;
+}
+.datetime select:nth-child(3) {
+	width: 55px;
+}

@@ -1,83 +1,72 @@
-<%= form_for(@person, data: {abide: ''}) do |f| %>
-  <% if @person.errors.any? %>
-    <div class="row">
-      <div class="small-12 columns" id="error_explanation"></div>
-        <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
-        <ul>
-        <% @person.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-    </div>
-  <% end %>
 
+
+<%= form_for(@person, data: {abide: ''}) do |f| %>
   <div class="row">
-    <div class="medium-4 columns">
+    <div class="small-12 columns">
         <%= f.label :full_name %>
         <%= f.text_field :full_name, placeholder: 'Shervin Pishavar',required: '' %>
         <%= content_tag(:small, "This field is required", class: "error") %>
     </div>
   </div>
   <div class="row">
-    <div class="medium-4 columns">
+    <div class="small-12 columns">
       <%= f.label :description %>
-      <%= f.text_field :description, placeholder: 'lorem impsum', required:'' %>
+      <%= f.text_area :description, "rows" => 3, placeholder: 'lorem ipsum', required: '' %>
       <%= content_tag(:small, "Please enter a short bio about this person.", class: "error") %>
     </div>
   </div>
   <div class="row">
-    <div class="medium-4 columns">
+    <div class="small-12 columns">
 			<%= f.check_box :investor %>
 			<%= f.label :investor %>
+      <%= f.check_box :entrepreneur %>
+      <%= f.label :entrepreneur %>
     </div>
   </div>
   <div class="row">
-    <div class="medium-4 columns">
-			<%= f.check_box :entrepreneur %>
-			<%= f.label :entrepreneur %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="medium-4 columns">
+    <div class="small-12 columns">
 			<%= f.label :birth_date %>
-			<%= f.date_select :birth_date, :start_year => 1930, :end_year => 2005 %>
+			<%= f.text_field :birth_date, placeholder: 'YYYY-MM-DD', required: '', pattern: 'date' %>
+      <%= content_tag(:small, 'This field is required, e.g. 1990-01-27', class: "error") %>
     </div>
   </div>
   <div class="row">
-    <div class="medium-4 columns">
+    <div class="small-12 columns">
 			<%= f.label :location %>
 			<%= f.text_field :location, placeholder: 'Silicon Valley, CA', required:'' %>
-      <%= content_tag(:small, "We must know where this person lives. At least the country.", class: "error") %>	    		
+      <%= content_tag(:small, "We must know where this person lives. At least the country.", class: "error") %>
     </div>
   </div>
   <div class="row">
-    <div class="medium-4 columns">
-			<%= f.label :twitter_handle %>
-			<%= f.text_field :twitter_handle, placeholder: '@shervin' %>
-      
-    </div>
-  </div>
-  <div class="row">
-    <div class="medium-4 columns">
+    <div class="small-12 columns">
 			<%= f.label :website %>
-			<%= f.text_field :website, placeholder: 'http://sherpa.com/' %>
+			<%= f.text_field :website, placeholder: 'http://sherpa.com/', pattern: 'url' %>
+      <%= content_tag(:small, "e.g. http://sharpa.com/", class:"error") %>
     </div>
   </div>
   <div class="row">
-    <div class="medium-4 columns">
+    <div class="small-12 columns">
+      <%= f.label :twitter_handle %>
+      <%= f.text_field :twitter_handle, placeholder: '@shervin' %>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="small-12 columns">
 			<%= f.label :profile_picture %>
 			<%= f.file_field :profile_picture %>
     </div>
   </div>
-  <div class="row">
-    <div class="medium-4 columns">
-			<%= f.check_box :published %>
-			<%= f.label :published %>
+  <% if logged_in? %>
+    <div class="row">
+      <div class="small-12 columns">
+  			<%= f.check_box :published %>
+  			<%= f.label :published %>
+      </div>
     </div>
-  </div>
+  <% end %>
   <div class="row">
-    <div class="medium-4 columns">
-      <%= f.submit class: "button tiny radius success" %>
+    <div class="small-4 columns small-centered">
+      <%= f.submit class: "button tiny" %>
     </div>
   </div>
 <% end %>
