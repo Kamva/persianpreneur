@@ -1,5 +1,4 @@
 <% title "PersianPreneur" %>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <div class="row">
   <div class="small-8 columns">
     <h1>People</h1>
@@ -20,7 +19,7 @@
     <% @people.each do |person| %>
             <li class="tooltip-person">
               <div class="image-wrapper">
-                <%= link_to(image_tag(person.profile_picture.thumb.url))%>
+                <%= image_tag(person.profile_picture.thumb.url) %>
               </div>
               <div class="hidden tipcontent">
                 <h5>
@@ -46,17 +45,3 @@
     <% end %>
   </ul>
 </div>
-<script type="text/javascript">
-  $(document).ready(function() {    
-    $('li.tooltip-person').each(function() {
-      var $img = $(this).find('div.image-wrapper');
-      var tipContent = $('div.hidden.tipcontent', this).html();
-      $img.attr('title', tipContent);
-      $img.powerTip({
-        placement: 'nw-alt',
-        mouseOnToPopup: true,
-        smartPlacement: true
-      });
-    });
-  });
-</script>
