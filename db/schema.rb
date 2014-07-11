@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140626113412) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: true do |t|
     t.string   "email",            null: false
     t.string   "crypted_password", null: false
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140626113412) do
     t.datetime "updated_at"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
 
   create_table "people", force: true do |t|
     t.string   "full_name"

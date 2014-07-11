@@ -33,7 +33,7 @@ gem 'meta_request',			group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -46,4 +46,8 @@ gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem 'font-awesome-sass'
-gem 'sqlite3'
+# gem 'sqlite3'
+
+#production
+gem 'rails_12factor',		group: :production
+gem 'pg',					group: :production

@@ -27,3 +27,6 @@ config/secrets.yml
 
 #image uploads
 /public/uploads/test
+
+#environment settings
+.env
