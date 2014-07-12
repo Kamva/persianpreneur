@@ -15,3 +15,6 @@ a.fa {
 .datetime select:nth-child(3) {
 	width: 55px;
 }
+.datepicker-close{
+	position: absolute;
+}
