@@ -46,6 +46,12 @@
   </div>
   <div class="row">
     <div class="small-12 columns">
+      <%= f.label :linkedin_profile %>
+      <%= f.text_field :linkedin_profile, placeholder: 'http://linkedin.com/in/shervin', pattern: 'url' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
       <%= f.label :twitter_handle %>
       <%= f.text_field :twitter_handle, placeholder: '@shervin' %>
     </div>
