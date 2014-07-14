@@ -1,6 +1,6 @@
 desc "Import person data from a tsv file"
 task :import => :environment do
-	file = File.open("tmp/data.tsv", "r")
+	file = File.open("lib/tasks/data.tsv", "r")
 	file.each do |row|
 		fields = row.split(/\t/)
 		next if Person.find_by_full_name(fields[0])

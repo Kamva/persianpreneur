@@ -23,22 +23,31 @@
               </div>
               <div class="hidden tipcontent">
                 <h5>
-                  <%= person.full_name + ", "%>
-                  <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %> 
+                  <%= person.full_name + (person.birth_date.blank? ? "" : ", ") %>
+                  <% unless person.birth_date.blank? %>
+                    <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %> 
+                  <% end %>
                 </h5>
                 <div>
                   <% unless person.website.blank? %>
                     <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
+                  <% end %>
+                  <% unless person.linkedin_profile.blank? %>
+                    <%= link_to "", "#{person.linkedin_profile}", :class => ['fa', 'fa-linkedin-square'  , 'fa-lg'] %>
                   <% end %>
                   <% unless person.twitter_handle.blank? %>
                     <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter-square', 'fa-lg'] %>
                   <% end %>
                 </div>
                 <div>
-                  <%= person.description %>
+                  <p>
+                    <%= person.description %>
+                  </p>
                 </div>
                 <div>
-                  <%= person.location %>
+                  <p>
+                    <%= person.location %>
+                  </p>
                 </div>
               </div>
             </li>

@@ -52,7 +52,13 @@
   </div>
   <div class="row">
     <div class="small-12 columns">
-      <%= f.label :twitter_handle %>
+      <%= f.label :linkedin_profile %>
+      <%= f.text_field :linkedin_profile, placeholder: 'http://linkedin.com/in/shervin', pattern: 'url' %>
+    </div>
+  </div> 
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :twitter_handle, "Twitter" %>
       <%= f.text_field :twitter_handle, placeholder: '@shervin' %>
     </div>
   </div>  
@@ -72,7 +78,7 @@
   <% end %>
   <div class="row">
     <div class="small-4 columns small-centered">
-      <%= f.submit class: "button tiny" %>
+      <%= f.submit "Add To The List", class: "button tiny" %>
     </div>
   </div>
 <% end %>

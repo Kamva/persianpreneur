@@ -67,6 +67,10 @@ class AdminsController < ApplicationController
     @people = Person.all.where(published: false)
   end
 
+  def manage
+    @people = Person.all.where(published: true)
+  end
+  
   def publish
     @person = Person.find(params[:id])
     @person.update_attributes(published: true)

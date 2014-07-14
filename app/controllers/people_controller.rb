@@ -47,8 +47,4 @@ class PeopleController < ApplicationController
 		redirect_to admin_manage_people_path
 	end
 
-	def manage
-		@people = Person.all.where(published: true)
-	end
-
 end
