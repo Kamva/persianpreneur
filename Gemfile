@@ -42,6 +42,7 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 
 gem 'foundation-rails'
+gem 'foundation-datetimepicker-rails'
 gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
