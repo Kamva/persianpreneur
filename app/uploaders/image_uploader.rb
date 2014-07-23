@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     Rails.env.production? ? (environment_folder = "production") : (environment_folder = "test")
-    "uploads/#{environment_folder}/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "assets/images/#{environment_folder}/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
