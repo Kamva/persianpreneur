@@ -27,6 +27,7 @@ config/initializers/secret_token.rb
 
 #image uploads
 /public/uploads/test
+/public/assets/images/test
 
 #environment settings
 .env
