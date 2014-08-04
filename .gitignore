@@ -26,10 +26,6 @@ config/initializers/secret_token.rb
 .rvmrc
 
 #image uploads
-<<<<<<< HEAD
-/public/uploads/test
-=======
->>>>>>> 5570501fa11e32d649c77f064f33780600b543b1
 /public/assets/images/test
 
 #environment settings
