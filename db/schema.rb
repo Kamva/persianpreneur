@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 20140712150958) do
     t.date     "birth_date"
     t.string   "location"
     t.string   "twitter_handle"
-    t.string   "linkedin_profile"
     t.boolean  "published",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "linkedin_profile"
   end
 
 end

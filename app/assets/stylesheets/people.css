@@ -4,5 +4,39 @@
 
 #powerTip {
 	white-space: normal;
-	width: 300px;
+	width: 250px;
+	background:	rgba(0, 0, 0, 0.95);
+	border-radius: 10px;
+	font: normal 16px/24px "Helvetica Neue", Arial, sans-serif;
+	padding: 18px 24px;
+	padding-bottom: 20px;
+}
+
+#powerTip .full-name {
+	display: block;
+	text-align: left;
+	color: white;
+	font-family: "Vollkorn", serif;
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+
+
+#powerTip .description {
+	font-family: "Vollkorn", serif;
+	font-size: 14px
+}
+
+.links {
+	margin-left: 10px;
+	margin-bottom: 5px;
+	display: block;
+	float:right;
+}
+
+.tooltip-person, .links a {
+	color: #8A8A8A;
+}
+.tooltip-person, .links a:hover {
+	color: white;
 }
