@@ -68,7 +68,7 @@ class AdminsController < ApplicationController
   end
 
   def manage
-    @people = Person.all.where(published: true)
+    @people = Person.all.where(published: true).order('created_at DESC')
   end
   
   def publish

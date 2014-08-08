@@ -56,11 +56,23 @@
   </div>  
   <div class="row">
     <div class="small-12 columns">
-			<%= f.label :profile_picture %>
-			<%= f.file_field :profile_picture %>
+      <% if not @person.profile_picture? %>
+        <%= f.label :profile_picture %>
+        <%= f.file_field :profile_picture, required: '' %> 
+      <% end %>			
+      <% if @person.profile_picture? %>
+        <%= f.label :profile_picture, "Change Profile Picture" %>
+        <%= f.file_field :profile_picture %>
+      <% end %>
     </div>
   </div>
   <% if logged_in? %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.label :arrangement %>
+        <%= f.number_field :arrangement, required: '' %>
+      </div>
+    </div>
     <div class="row">
       <div class="small-12 columns">
   			<%= f.check_box :published %>
@@ -70,7 +82,7 @@
   <% end %>
   <div class="row">
     <div class="small-4 columns small-centered">
-      <%= f.submit "Add To The List", class: "button tiny" %>
+      <%= f.submit "Add Me To The List", class: "button tiny radius" %>
     </div>
   </div>
 <% end %>
