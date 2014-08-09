@@ -1,20 +1,32 @@
 .title {
 	padding-bottom: 50px;
 }
-
+body {
+	background-color: #F3F2EF;
+}
+.top-bar {
+	margin-bottom: 20px;
+}
 a.fa {
   padding-bottom: 10px;
 }
 
-.datetime select:nth-child(1) {
-	width: 75px;
-}
-.datetime select:nth-child(2) {
-	width: 70px;
-}
-.datetime select:nth-child(3) {
-	width: 55px;
-}
 .datepicker-close{
 	position: absolute;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	/*height: 100%;*/
+}
+
+footer {
+	text-decoration: bold;
+	color: white;
+	background: #333333;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 200px;
+	text-align: center;
 }

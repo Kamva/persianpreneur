@@ -40,3 +40,11 @@
 .tooltip-person, .links a:hover {
 	color: white;
 }
+
+.main-text {
+	margin-bottom: 75px;
+}
+
+.main-text #title-description {
+	margin-bottom: 40px;
+}

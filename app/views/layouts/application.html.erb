@@ -69,8 +69,10 @@
         </div>  
       </div>
     <% end %>
-    <%= yield %>
-
+    <div id="wrapper">
+      <%= yield %>
+    </div>
+    <%= render partial: 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
