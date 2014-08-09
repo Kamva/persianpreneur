@@ -45,7 +45,7 @@ gem 'foundation-rails'
 gem 'foundation-datetimepicker-rails'
 gem 'sorcery'
 gem 'carrierwave'
-gem 'rmagick', :require => 'RMagick'
+gem 'rmagick', '>=2.13.3',:require => 'RMagick'
 gem 'font-awesome-sass'
 # gem 'sqlite3'
 
