@@ -30,3 +30,4 @@ config/initializers/secret_token.rb
 
 #environment settings
 .env
+config/database.yml
