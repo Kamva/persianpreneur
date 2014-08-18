@@ -10,7 +10,6 @@ set :repo_url, 'git@github.com:hadifarnoud/persianpreneur.git'
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/persianpreneur'
 
-set :linked_files, %w{config/database.yml}
 set :linked_files, %w{config/database.yml .env}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
