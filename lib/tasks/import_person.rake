@@ -5,16 +5,16 @@ namespace :db do
 		task :import => :environment do
 			file_path = "lib/tasks/data.tsv"
 			file = File.open(file_path, "r")
-			index = 1 
+			index = 0 
 			imported = 0 # keep track of imported persons
 			file_length = %x{sed -n '=' #{file_path} | wc -l}.to_i
 			puts "Found #{file_length} #{"record".pluralize(file_length)} in the file..."
-			file.each do |row|
-				puts "Importing " + "Record \##{index}".bold + "..."
+			file.drop(1).each do |row|
 				index = index + 1
+				puts "Importing " + "Record \##{index}".bold + "..."
 				fields = row.split(/\t/)
 				if Person.find_by_full_name(fields[0])
-					puts "Person #{fields[0]} is already in the database.".yellow
+					puts "Person " + "#{fields[0]}".bold + " is already in the database.".yellow
 					next
 				end
 				full_name        = fields[0].blank? ? fields[0] : fields[0].tr_s('"', '').strip
@@ -25,6 +25,7 @@ namespace :db do
 				website          = fields[3].blank? ? fields[3] : fields[3].tr_s('"', '').strip
 				twitter_handle   = fields[5].blank? ? fields[5] : fields[5].tr_s('"', '').strip
 				linkedin_profile = fields[4].blank? ? fields[4] : fields[4].tr_s('"', '').strip
+				puts "Person: " + "#{full_name}".bold
 				person = Person.new
 				puts "Downloading person's profile picture..."
 				person.remote_profile_picture_url = profile_picture
