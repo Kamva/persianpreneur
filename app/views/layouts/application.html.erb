@@ -11,13 +11,14 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+    <div class="contain-to-grid sticky">
     <nav class="top-bar" data-topbar> 
       <ul class="title-area"> 
         <li class="name"> 
-          <h1><%= link_to "Persian Preneur", root_path %></h1> 
+          <!-- <h1><%= link_to "Persian Preneur", root_path %></h1>  -->
         </li> 
-      </ul> 
-      <% if logged_in? %>    
+      </ul>     
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="left">
@@ -59,6 +60,7 @@
         </section>
       <% end %>
     </nav>
+  </div>
     <% if flash.notice %>
       <div class="row">
         <div class="8-small columns">          

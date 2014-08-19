@@ -3,7 +3,7 @@
 <div class="main">
   <section id="main-section">
     <div class="row">
-      <div class="small-12 columns text-center main-text">
+      <div class="small-10 columns left main-text">
         <p>
           <h1 id="title">
             Persianpreneur  
@@ -25,6 +25,16 @@
           <a class="close-reveal-modal">&#215;</a>
         </div>
       </div>
+    <div class="side-menu">
+      <div class="small-2 culomns right">
+        <ul class="side-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="http://twitter.com/persianpreneur">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
     </div>
   </section>
   <section id="content-section">
@@ -54,8 +64,7 @@
                   </div>
                   <div class="description">
                     <%= person.description %>
-                    <br/>
-                    <%= person.location %>
+                    <br/><p><%= person.location %></p>
                   </div>
                 </div>
               </li>
