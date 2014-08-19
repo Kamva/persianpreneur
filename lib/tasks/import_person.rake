@@ -31,6 +31,7 @@ namespace :db do
 				person.remote_profile_picture_url = profile_picture
 				if person.profile_picture.blank?
 					puts "Could not download person's profile picture...".yellow
+					puts "#{profile_picture}".underline
 					puts "Omitted the person.".red
 					next
 				end
