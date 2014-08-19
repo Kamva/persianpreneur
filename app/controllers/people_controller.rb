@@ -5,7 +5,7 @@ class PeopleController < ApplicationController
 	include PeopleHelper
 
 	def index
-		@people = Person.all.where(published: true).order(:arrangement)
+		@people = Person.all.where(published: true).order(:position)
 	end
 
 	def show
@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
 	def new
 		@person = Person.new		
 		@person.published = false
-		@person.arrangement = Person.all.length + 1
+		@person.position = Person.all.length + 1
 	end
 
 	def create
