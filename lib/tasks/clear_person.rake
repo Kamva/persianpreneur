@@ -4,7 +4,7 @@ namespace :db do
 		task :clear => :environment do
 			puts "Clearing out the Person model ..."
 			Person.destroy_all
-			puts "Finished :)"
+			puts "Person records were successfully destroyed.".green
 		end
 	end
 end

@@ -1,11 +1,22 @@
+require 'colored'
 namespace :db do
 	namespace :person do
 		desc "Import person data from a tsv file"
 		task :import => :environment do
-			file = File.open("lib/tasks/data.tsv", "r")
+			file_path = "lib/tasks/data.tsv"
+			file = File.open(file_path, "r")
+			index = 1 
+			imported = 0 # keep track of imported persons
+			file_length = %x{sed -n '=' #{file_path} | wc -l}.to_i
+			puts "Found #{file_length} #{"record".pluralize(file_length)} in the file..."
 			file.each do |row|
+				puts "Importing " + "Record \##{index}".bold + "..."
+				index = index + 1
 				fields = row.split(/\t/)
-				next if Person.find_by_full_name(fields[0])
+				if Person.find_by_full_name(fields[0])
+					puts "Person #{fields[0]} is already in the database.".yellow
+					next
+				end
 				full_name        = fields[0].blank? ? fields[0] : fields[0].tr_s('"', '').strip
 				description      = fields[7].blank? ? fields[7] : fields[7].tr_s('"', '').strip
 				profile_picture  = fields[6].blank? ? fields[6] : fields[6].tr_s('"', '').strip
@@ -15,8 +26,13 @@ namespace :db do
 				twitter_handle   = fields[5].blank? ? fields[5] : fields[5].tr_s('"', '').strip
 				linkedin_profile = fields[4].blank? ? fields[4] : fields[4].tr_s('"', '').strip
 				person = Person.new
+				puts "Downloading person's profile picture..."
 				person.remote_profile_picture_url = profile_picture
-				next if person.profile_picture.blank?
+				if person.profile_picture.blank?
+					puts "Could not download person's profile picture...".yellow
+					puts "Omitted the person.".red
+					next
+				end
 				person.full_name = full_name
 				person.description = description
 				person.location = location
@@ -26,8 +42,12 @@ namespace :db do
 				person.linkedin_profile = linkedin_profile
 				person.published = true
 				person.position = Person.all.length + 1
-				person.save!
+				if person.save!
+					puts "Record \##{index} imported successfully.".green
+					imported = imported + 1
+				end
 			end
+			puts "Imported #{imported} out of #{file_length} #{"record".pluralize(file_length)}.".green
 		end
 	end
 end

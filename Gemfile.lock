@@ -67,6 +67,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    colored (1.2)
     colorize (0.7.3)
     debug_inspector (0.0.2)
     dotenv-deployment (0.0.2)
@@ -205,6 +206,7 @@ DEPENDENCIES
   capistrano-rbenv!
   carrierwave
   coffee-rails (~> 4.0.0)
+  colored
   dotenv-deployment
   execjs
   font-awesome-sass

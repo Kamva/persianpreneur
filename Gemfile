@@ -45,6 +45,7 @@ gem 'capistrano-rbenv', github: "capistrano/rbenv"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'colored'
 gem 'foundation-rails'
 gem 'foundation-datetimepicker-rails'
 gem 'sorcery'
