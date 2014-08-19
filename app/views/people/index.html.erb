@@ -4,20 +4,20 @@
   <section id="main-section">
     <div class="row">
       <div class="small-10 columns left main-text">
-        <p>
           <h1 id="title">
             Persianpreneur  
           </h1>
-          <h4 id="title-description">
-            /ˈpərZHənprəˈno͝or, -ˈnər/  noun
-          </h4>
+          <div class="intro" id="title-description">
+          <h4>
+            /ˈpərZHənprəˈno͝or, -ˈnər/ <span class="noun"> noun</span></h4>
+          
           <h5>
-            An Iranian entrepreneur making the world a better place by solving one problem at a time. 
-          </h5>
-          <h5>
-            They are hardworking smart people. You can find a list of them below.
+            <p>An Iranian entrepreneur making the world a better place by solving one problem at a time. <br/>
+          
+          
+            They are hardworking smart people. You can find a list of them below.</p>
           </h5>          
-        </p>
+        </div>
         <%= link_to "Add Yourself To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small radius'] %>
         <div id="addPersonModal" class="reveal-modal" data-reveal>
           <% @person = Person.new %>

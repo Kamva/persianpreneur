@@ -39,3 +39,14 @@ footer {
 footer.text-left.h6{
 	color: #333;
 }
+#title-description h4, #title-description h5 {
+	font-family: Times New Roman, Serif;
+}
+.noun {
+	font-family: Times New Roman, Serif;
+	font-style: italic;
+	font-size: .7em;
+}
+.intro {
+	margin: 1em 0 1em 0;
+}
