@@ -30,3 +30,12 @@ footer {
 	margin-top: 200px;
 	text-align: center;
 }
+.side-nav li a{
+	padding: 0 !important;
+}
+.side-menu {
+	padding-top: 14px;
+}
+footer.text-left.h6{
+	color: #333;
+}
