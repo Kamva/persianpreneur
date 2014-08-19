@@ -14,8 +14,12 @@ foreman start
 
 ## Tasks
 
-You can import a list of people bu `rake import`. You can also wipe off the database of 'persons' by `rake db:clear_person`.
+You can import a list of people by `rake import` You can also wipe off the database of 'persons' by `rake db:clear_person`
 
 ## Deploy on Heroku
 
-You need to remove 'therubyracer' and 'execjs' gems. Heroku doesn't need a js runtime. Alternatively, you can use nodejs instead of 'execjs'. It's was just more convenient to add a gem rather than asking all to install nodejs
+You need to remove `therubyracer` and `execjs` gems. Heroku doesn't need a js runtime. Alternatively, you can use nodejs instead of 'execjs'. It's was just more convenient to add a gem rather than asking all to install nodejs.
+
+## Deploy elsewhere
+
+Follow [this guide!](https://gorails.com/deploy/ubuntu/14.04)
