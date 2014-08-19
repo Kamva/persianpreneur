@@ -27,7 +27,7 @@ database.yml
 .rvmrc
 
 #image uploads
-/public/assets/images/test
+/public/assets/images/
 
 #environment settings
 .env
