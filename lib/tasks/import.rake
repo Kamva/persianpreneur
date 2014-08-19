@@ -23,7 +23,7 @@ task :import => :environment do
 		person.twitter_handle = twitter_handle
 		person.linkedin_profile = linkedin_profile
 		person.published = true
-		person.arrangement = Person.all.length + 1
+		person.position = Person.all.length + 1
 		person.save!
 	end
 end
