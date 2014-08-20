@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/sortable
 //= require jquery_ujs
 //= require foundation
 //= require_tree .

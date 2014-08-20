@@ -50,3 +50,10 @@ footer.text-left.h6{
 .intro {
 	margin: 1em 0 1em 0;
 }
+
+#manage-people .handle {
+	cursor: move;
+	color: #777;
+
+}
+

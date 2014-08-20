@@ -12,3 +12,11 @@ $(document).on "ready page:change", ->
 			mouseOnToPopup: true, 
 			smartPlacement: true
 		})
+
+jQuery >
+	$('#manage-people').sortable
+		axis: 'y'
+		handle: '.handle'
+		update: ->
+			$.post($(this).data('update-url'), $(this).sortable('serialize'))
+

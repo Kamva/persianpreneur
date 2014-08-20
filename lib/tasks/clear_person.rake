@@ -1,10 +1,10 @@
 namespace :db do
 	namespace :person do
-		desc "Clears Person model"
+		desc "Clears People table"
 		task :clear => :environment do
-			puts "Clearing out the Person model ..."
+			puts "Clearing out People table..."
 			Person.destroy_all
-			puts "Person records were successfully destroyed.".green
+			puts "People table cleared out successfully".green
 		end
 	end
 end

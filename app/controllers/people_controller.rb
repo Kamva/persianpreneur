@@ -48,4 +48,11 @@ class PeopleController < ApplicationController
 		redirect_to admin_manage_people_path
 	end
 
+	def sort
+		params[:person].each_with_index do |id, index|
+			Person.where(id: id).update_all({ position: index + 1 })
+		end
+		render nothing: true
+	end
+
 end

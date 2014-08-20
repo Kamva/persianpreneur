@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
 	root to: "people#index"
-  resources :people
+  resources :people do
+    collection { post :sort }
+  end
   resources :admins
   resource :admin_sessions, only: [:new, :create, :destroy]
   get 'admin/manage/people' => 'admins#manage'

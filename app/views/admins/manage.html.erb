@@ -17,19 +17,21 @@
       <table>
         <thead>
           <tr>
-            <th>Person</th>
+            <th></th>
+            <th class="text-center">Person</th>
             <th class="text-center" colspan="3">Actions</th>
           </tr>
         </thead>
 
-        <tbody>
+        <tbody id="manage-people" data-update-url="<%= sort_people_url %>">
           <% @people.each do |person| %>
-            <tr>
-                <td><%= person.full_name %></td>
+            <%= content_tag_for(:tr, person) do %>
+              <td class="fa fa-arrows handle"></td>
+              <td><%= person.full_name %></td>
               <td><%= link_to 'Show', person %></td>
               <td><%= link_to 'Edit', edit_person_path(person) %></td>
               <td><%= link_to 'Destroy', "/people/#{person.id}/destroy", method: :delete %></td>
-            </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
