@@ -29,4 +29,3 @@ database.yml
 
 #environment settings
 .env
-config/secrets.yml
