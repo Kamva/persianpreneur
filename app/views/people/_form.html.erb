@@ -56,12 +56,13 @@
   </div>  
   <div class="row">
     <div class="small-12 columns">
-      <% if not :profile_picture? %>
+      <% if not :profile_picture.blank? %>
         <%= f.label :profile_picture %>
         <%= f.file_field :profile_picture, required: '' %> 
       <% end %>			
-      <% if :profile_picture? %>
-        <%= f.label :profile_picture, "Change Profile Picture" %>
+      <% if :profile_picture.blank? %>
+        <%= f.label :profile_picture, "Change Profile Picture", required: '' %>
+        <%= content_tag(:small, "Upload a picture.", class:"error") %>
         <%= f.file_field :profile_picture %>
       <% end %>
     </div>
