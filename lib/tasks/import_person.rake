@@ -38,8 +38,7 @@ namespace :db do
 				person.linkedin_profile = linkedin_profile				
 				person.published = get_url_failed?(person.profile_picture, profile_picture) ? false : true
 				person.position = Person.all.length + 1
-				if person.save!
-
+				if person.save!(validate: false)
 					puts "Record \##{index+1} imported successfully.".green
 					imported = imported + 1
 				end
