@@ -42,7 +42,7 @@
       <% @people.each do |person| %>
               <li class="tooltip-person">
                 <div class="image-wrapper">
-                  <%= image_tag(person.profile_picture.thumb.url) %>
+                  <%= image_tag asset_url(person.profile_picture.thumb.url) %>
                 </div>
                 <div class="hidden tipcontent">
                   <div class="links">              
