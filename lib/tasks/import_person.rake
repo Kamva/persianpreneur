@@ -29,17 +29,17 @@ namespace :db do
 				person = Person.new
 				puts "Downloading person's profile picture..."
 				person.remote_profile_picture_url = profile_picture
-				next if get_url_failed?(person.profile_picture, profile_picture)
 				person.full_name = full_name
 				person.description = description
 				person.location = location
 				person.birth_date = birth_date
 				person.website = website
 				person.twitter_handle = twitter_handle
-				person.linkedin_profile = linkedin_profile
-				person.published = true
+				person.linkedin_profile = linkedin_profile				
+				person.published = get_url_failed?(person.profile_picture, profile_picture) ? false : true
 				person.position = Person.all.length + 1
 				if person.save!
+
 					puts "Record \##{index+1} imported successfully.".green
 					imported = imported + 1
 				end

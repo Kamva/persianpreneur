@@ -19,7 +19,7 @@ def get_url_failed?(profile_picture, url)
 	if profile_picture.blank?
 		puts "Could not download person's profile picture...".yellow
 		puts "#{url}".underline
-		puts "Omitted the person.".red
+		puts "Person imported but is ".yellow + "not published.".yellow.bold
 		return true
 	end
 	return false
