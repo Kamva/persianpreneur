@@ -54,6 +54,11 @@
                     <% end %>
                   </div>
                   <div class="description">
+                    <% unless person.company.blank? %>
+                      <div class="company">
+                        <%= person.company %>
+                      </div>
+                    <% end %>
                     <%= person.description %>
                     <br/><p><%= person.location %></p>
                   </div>

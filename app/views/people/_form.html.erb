@@ -23,6 +23,12 @@
   </div>
   <div class="row">
     <div class="small-12 columns">
+      <%= f.label :company %>
+      <%= f.text_field :company %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
 			<%= f.label :birth_date %>
 			<%= f.text_field :birth_date, placeholder: 'YYYY-MM-DD', required: '', pattern: 'date', id: 'person-birthday', data:'mm-dd-yy' %>
       <%= content_tag(:small, 'This field is required, e.g. 1990-01-27', class: "error") %>
@@ -56,11 +62,11 @@
   </div>  
   <div class="row">
     <div class="small-12 columns">
-      <% if not :profile_picture.blank? %>
+      <% if :profile_picture.blank? %>
         <%= f.label :profile_picture %>
         <%= f.file_field :profile_picture, required: '' %> 
       <% end %>			
-      <% if :profile_picture.blank? %>
+      <% if not :profile_picture.blank? %>
         <%= f.label :profile_picture, "Change Profile Picture", required: '' %>
         <%= content_tag(:small, "Upload a picture.", class:"error") %>
         <%= f.file_field :profile_picture %>

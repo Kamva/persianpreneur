@@ -15,6 +15,7 @@ namespace :db do
 				fields = row.split(/\t/)
 				full_name        = fields[0].blank? ? fields[0] : fields[0].tr_s('"', '').strip
 				next if person_exists?(full_name)
+				company          = fields[1].blank? ? fields[1] : fields[1].tr_s('"', '').strip
 				description      = fields[7].blank? ? fields[7] : fields[7].tr_s('"', '').strip
 				profile_picture  = fields[6].blank? ? fields[6] : fields[6].tr_s('"', '').strip
 				location         = fields[8].blank? ? fields[8] : fields[8].tr_s('"', '').strip
@@ -30,6 +31,7 @@ namespace :db do
 				puts "Downloading person's profile picture..."
 				person.remote_profile_picture_url = profile_picture
 				person.full_name = full_name
+				person.company = company
 				person.description = description
 				person.location = location
 				person.birth_date = birth_date
