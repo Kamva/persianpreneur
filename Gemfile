@@ -45,8 +45,8 @@ gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-gem 'high_voltage', '~> 2.2.1'
+gem 'simple_captcha2'
+gem 'mail_form'
 gem 'colored'
 gem 'foundation-rails'
 gem 'foundation-datetimepicker-rails'

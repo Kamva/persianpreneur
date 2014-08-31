@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  simple_captcha:
+    placeholder: "Type the code..."
+    label: ""
+    refresh_button_text: "Refresh"
+    message:
+      default: "Secret Code did not match with the Image"
+      user: "The secret Image and code were different"
