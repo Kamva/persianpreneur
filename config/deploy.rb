@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:hadifarnoud/persianpreneur.git'
 set :deploy_to, '/home/deploy/persianpreneur'
 
 set :linked_files, %w{config/database.yml .env config/secrets.yml}
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets/images}
 # https://github.com/capistrano/bundler/issues/45
 set :bundle_binstubs, nil
 
