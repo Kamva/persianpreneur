@@ -16,7 +16,7 @@
             They are hardworking smart people. You can find a list of them below.</p>
           </h5>          
         </div>
-        <%= link_to "Add Yourself To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small radius'] %>
+        <%= link_to "Add Someone To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small radius'] %>
         <div id="addPersonModal" class="reveal-modal" data-reveal>
           <% @person = Person.new %>
           <%= render partial: '/people/form' %>
