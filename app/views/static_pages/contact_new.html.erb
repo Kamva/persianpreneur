@@ -1,39 +1,39 @@
 <div class="row">
-	<div class="small-10 columns">
+	<div class="small-12 large-10 columns">
 		<h3>Contact Us</h3>
 	</div>
 </div>
 <div class="row">
-	<div class="small-10 columns left">
+	<div class="small-12 large-10 columns left">
 		<%= form_for(@contact_form, url: contact_page_path, html: {method: :post}, data: {abide: ''}) do |f| %>
 		  <div class="row">
-		    <div class="small-10 columns">
+		    <div class="small-12 large-10 columns">
 		        <%= f.label :name %>
 		        <%= f.text_field :name, placeholder: 'Your Name...',required: '' %>
 		        <%= content_tag(:small, "This field is required", class: "error") %>
 		    </div>
 		  </div>
 		  <div class="row">
-		    <div class="small-10 columns">
+		    <div class="small-12 large-10 columns">
 		      <%= f.label :email %>
 		      <%= f.text_field :email, placeholder: 'Your Email...', required: '' %>
 		      <%= content_tag(:small, "Your Email Address is required.", class: "error") %>
 		    </div>
 		  </div>
 		  <div class="row">
-		    <div class="small-10 columns">
+		    <div class="small-12 large-10 columns">
 					<%= f.label :message %>
 					<%= f.text_area :message, "rows" => 4, placeholder: 'Your Message...', required: '' %>
 					<%= content_tag(:small, "This field is required.", class: "error") %>
 		    </div>
 		  </div>
 		  <div class="row">
-		  	<div class="small-4 columns">
+		  	<div class="small-8 large-4 columns">
 		  		<%= show_simple_captcha %>
 		  	</div>
 		  </div>
 		  <div class="row">
-		    <div class="small-4 columns small-centered">
+		    <div class="small-8 large-4 columns small-centered">
 		      <%= f.submit "Send", class: "button tiny radius" %>
 		    </div>
 		  </div>

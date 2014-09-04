@@ -4,9 +4,19 @@
 body {
 	background-color: #F3F2EF;
 }
+
+div.main-text {
+	margin-bottom: 75px;
+}
+
+div.main-text #title-description {
+	margin-bottom: 40px;
+}
+
 .top-bar {
 	margin-bottom: 20px;
 }
+
 a.fa {
   padding-bottom: 10px;
 }
@@ -15,28 +25,29 @@ a.fa {
 	position: absolute;
 }
 
-#wrapper {
-	min-height: 100%;
-	height: auto !important;
-	/*height: 100%;*/
+div#wrapper {
+	margin-bottom: 40px;
 }
 
 footer {
 	text-decoration: bold;
 	color: white;
 	background: #333333;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-top: 200px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 100%;
+	margin-bottom: 0px;
+	bottom: 0;
+	position: fixed;
 	text-align: center;
 }
-.side-nav li a{
+.side-nav li a {
 	padding: 0 !important;
 }
 .side-menu {
 	padding-top: 14px;
 }
-footer.text-left.h6{
+footer.text-left.h6 {
 	color: #333;
 }
 #title-description h4, #title-description h5 {
@@ -54,6 +65,13 @@ footer.text-left.h6{
 #manage-people .handle {
 	cursor: move;
 	color: #777;
-
 }
-
+	
+@media (max-width: 641px) {
+	div.main-text > div#add-person-button {
+		text-align: center;
+	}
+	div#wrapper {
+		margin-bottom: 100px;
+	}	
+}

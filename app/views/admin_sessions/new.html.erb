@@ -5,19 +5,19 @@
 
 <%= form_tag admin_sessions_path, method: :post do %>
   <div class="row">
-    <div class="small-4 columns small-centered">
+    <div class="small-12 large-4 columns small-centered">
       <%= label_tag :email %>
       <%= text_field_tag :email %>
     </div>
   </div>
   <div class="row">
-    <div class="small-4	 columns small-centered">
+    <div class="small-12 large-4 columns small-centered">
 	    <%= label_tag :password %>
 	    <%= password_field_tag :password %>
     </div>
   </div>
   <div class="row">
-    <div class="large-4 columns small-centered">
+    <div class="small-12 large-4 columns small-centered">
     	<%= submit_tag("Login", :class => "button small radius expand") %>
     </div>
   </div>

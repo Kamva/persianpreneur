@@ -4,77 +4,59 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= content_for?(:title) ? yield(:title) : "PresianPreneur" %></title>
-
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <% if logged_in? %>
-    <div class="contain-to-grid sticky">
-    <nav class="top-bar" data-topbar> 
-      <ul class="title-area"> 
-        <li class="name"> 
-          <!-- <h1><%= link_to "Persian Preneur", root_path %></h1>  -->
-        </li> 
-      </ul>     
-        <section class="top-bar-section">
-          <!-- Right Nav Section -->
-          <ul class="left">
-            <ul class="title-area"> 
-              <li class="home"> 
-                <%= link_to "Home", root_path %>
-              </li>
-            </ul>
-            <li class="divider"></li>            
-            <ul class="title-area">
-              <li class="review"> 
-                <%= link_to "Review Suggestions", admin_review_path %>
-              </li>
-            </ul>
-            <li class="divider"></li>
-            <ul class="title-area"> 
-              <li class="manage-people"> 
-                <%= link_to "Manage People", admin_manage_people_path %>
-              </li>
-            </ul>
-            <li class="divider"></li>
-            <ul class="title-area"> 
-              <li class="manage-admins"> 
-                <%= link_to "Manage Admins", admin_manage_admins_path %>
-              </li>
-            </ul>
-          </ul>
-          <ul class="right">
-            <li class="title-area">
-              <%= link_to "Logged in as #{current_user.email}", edit_admin_path(current_user) %>
-            </li>
-            <li class="divider"></li>
-            <li class="title-area">
-              <li class="logout">
-                <%= link_to "Logout", admin_logout_path %>
-              </li>
-            </li>
-          </ul>
-        </section>
-      <% end %>
-    </nav>
-  </div>
-    <% if flash.notice %>
-      <div class="row">
-        <div class="8-small columns">          
-          <div data-alert class="alert-box secondary">
-            <%= flash.notice %>
-            <a href="#" class="close">&times</a>
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">        
+        <div class="hide-for-large-up">
+          <nav class="tab-bar">
+            <section class="left-small">
+              <a href="#" class="left-off-canvas-toggle menu-icon" ><span></span></a>
+            </section>
+          </nav>
+          <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+              <li><%= link_to 'Home', root_path %></li>
+              <% unless logged_in? %>
+                <li><%= link_to 'About', about_page_path %></li>
+                <li><%= link_to 'Contact', contact_page_path %></li>
+                <li><%= link_to 'Twitter', 'http://twitter.com/persianpreneur'%></li>
+              <% end %>
+              <% if logged_in? %>
+                <li><%= link_to "Review Suggestions", admin_review_path %></li>
+                <li><%= link_to "Manage People", admin_manage_people_path %></li>
+                <li><%= link_to "Manage Admins", admin_manage_admins_path %></li>
+                <li><%= link_to "Logged in as #{current_user.email}", edit_admin_path(current_user) %></li>
+                <li><%= link_to "Logout", admin_logout_path %></li>
+              <% end %>
+            </ul>  
+          </aside>
+        </div>
+        <% if logged_in? %>
+          <div class="show-for-large-up">          
+            <%= render partial: 'layouts/admin_top_bar' %>
           </div>
-        </div>  
+        <% end %>
+        <% if flash.notice %>
+          <div class="row">
+            <div class="8-small columns">          
+              <div data-alert class="alert-box secondary">
+                <%= flash.notice %>
+                <a href="#" class="close">&times</a>
+              </div>
+            </div>
+          </div>
+        <% end %>        
+        <div id="wrapper">
+          <%= yield %>
+        </div>
+        <%= render partial: 'layouts/footer' %>
       </div>
-    <% end %>
-    <div id="wrapper">
-      <%= yield %>
     </div>
-    <%= render partial: 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

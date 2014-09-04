@@ -1,0 +1,45 @@
+<div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar> 
+    <ul class="title-area"> 
+      <li class="name"></li> 
+    </ul>     
+      <section class="top-bar-section">
+        <ul class="left">
+          <ul class="title-area"> 
+            <li class="home"> 
+              <%= link_to "Home", root_path %>
+            </li>
+          </ul>
+          <li class="divider"></li>            
+          <ul class="title-area">
+            <li class="review"> 
+              <%= link_to "Review Suggestions", admin_review_path %>
+            </li>
+          </ul>
+          <li class="divider"></li>
+          <ul class="title-area"> 
+            <li class="manage-people"> 
+              <%= link_to "Manage People", admin_manage_people_path %>
+            </li>
+          </ul>
+          <li class="divider"></li>
+          <ul class="title-area"> 
+            <li class="manage-admins"> 
+              <%= link_to "Manage Admins", admin_manage_admins_path %>
+            </li>
+          </ul>
+        </ul>
+        <ul class="right">
+          <li class="title-area">
+            <%= link_to "Logged in as #{current_user.email}", edit_admin_path(current_user) %>
+          </li>
+          <li class="divider"></li>
+          <li class="title-area">
+            <li class="logout">
+              <%= link_to "Logout", admin_logout_path %>
+            </li>
+          </li>
+        </ul>
+      </section>
+  </nav>
+</div>

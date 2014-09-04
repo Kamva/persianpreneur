@@ -3,7 +3,7 @@
 <div class="main">
   <section id="main-section">
     <div class="row">
-      <div class="small-10 columns left main-text">
+      <div class="small-12 large-10 columns left main-text">
           <h1 id="title">
             Persianpreneur  
           </h1>
@@ -18,25 +18,28 @@
             They are hardworking smart people. You can find a list of them below.</p>
           </h5>          
         </div>
-        <%= link_to "Add Yourself To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small radius'] %>
+          <div id="add-person-button">
+            <%= link_to "Add Yourself To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small radius'] %>            
+          </div>
+
         <div id="addPersonModal" class="reveal-modal" data-reveal>
           <% @person = Person.new %>
           <%= render partial: '/people/form' %>
           <a class="close-reveal-modal">&#215;</a>
-        </div>
+        </div>                    
       </div>
       <%= render partial: 'layouts/side_menu' %>
     </div>
-  </section>
+  </section>  
   <section id="content-section">
-    <ul class="small-block-grid-3 medium-block-grid-5 large-block-grid-10">
+    <ul class="small-block-grid-1 medium-block-grid-6 large-block-grid-10">
       <% @people.each do |person| %>
               <li class="tooltip-person">
                 <div class="image-wrapper">
                   <%= image_tag asset_url(person.profile_picture.thumb.url) %>
                 </div>
-                <div class="hidden tipcontent">
-                  <div class="links">              
+                <div class="hide-for-medium-up tipcontent">
+                  <div class="links show-for-medium-up">              
                     <% unless person.website.blank? %>
                       <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
                     <% end %>
@@ -53,6 +56,17 @@
                       <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %> 
                     <% end %>
                   </div>
+                  <div class="links hide-for-medium-up">              
+                    <% unless person.website.blank? %>
+                      <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
+                    <% end %>
+                    <% unless person.linkedin_profile.blank? %>
+                      <%= link_to "", "#{person.linkedin_profile}", :class => ['fa', 'fa-linkedin'  , 'fa-lg'] %>
+                    <% end %>
+                    <% unless person.twitter_handle.blank? %>
+                      <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter', 'fa-lg'] %>
+                    <% end %>
+                  </div>                  
                   <div class="description">
                     <% unless person.company.blank? %>
                       <div class="company">
