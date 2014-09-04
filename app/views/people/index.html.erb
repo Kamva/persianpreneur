@@ -38,13 +38,13 @@
                 <div class="hide-for-medium-up tipcontent">
                   <div class="links show-for-medium-up">              
                     <% unless person.website.blank? %>
-                      <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
+                      <%= link_to "", person.website, target: "_blank", :class => ['fa', 'fa-home', 'fa-lg'] %>
                     <% end %>
                     <% unless person.linkedin_profile.blank? %>
-                      <%= link_to "", "#{person.linkedin_profile}", :class => ['fa', 'fa-linkedin'  , 'fa-lg'] %>
+                      <%= link_to "", "#{person.linkedin_profile}", target: "_blank", :class => ['fa', 'fa-linkedin'  , 'fa-lg'] %>
                     <% end %>
                     <% unless person.twitter_handle.blank? %>
-                      <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter', 'fa-lg'] %>
+                      <%= link_to "", "http://twitter.com/#{person.twitter_handle}", target: "_blank", :class => ['fa', 'fa-twitter', 'fa-lg'] %>
                     <% end %>
                   </div>
                   <div class="full-name">
@@ -55,13 +55,13 @@
                   </div>
                   <div class="links hide-for-medium-up">              
                     <% unless person.website.blank? %>
-                      <%= link_to "", person.website, :class => ['fa', 'fa-home', 'fa-lg'] %>
+                      <%= link_to "", person.website, target: "_blank", :class => ['fa', 'fa-home', 'fa-lg'] %>
                     <% end %>
                     <% unless person.linkedin_profile.blank? %>
-                      <%= link_to "", "#{person.linkedin_profile}", :class => ['fa', 'fa-linkedin'  , 'fa-lg'] %>
+                      <%= link_to "", "#{person.linkedin_profile}", target: "_blank", :class => ['fa', 'fa-linkedin'  , 'fa-lg'] %>
                     <% end %>
                     <% unless person.twitter_handle.blank? %>
-                      <%= link_to "", "http://twitter.com/#{person.twitter_handle}", :class => ['fa', 'fa-twitter', 'fa-lg'] %>
+                      <%= link_to "", "http://twitter.com/#{person.twitter_handle}", target: "_blank", :class => ['fa', 'fa-twitter', 'fa-lg'] %>
                     <% end %>
                   </div>                  
                   <div class="description">
