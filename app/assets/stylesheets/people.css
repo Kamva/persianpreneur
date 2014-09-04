@@ -41,6 +41,15 @@ div.description .company {
 	div.image-wrapper {
 		text-align: center;
 	}
+	div.tipcontent {
+		margin: 15px 25px 50px;
+		padding: 10px 20px;
+		border: 0px solid;
+		background: rgba(250, 250, 250, 0.2);
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.35),
+								0 85px 180px 0 #fff,
+								0 6px 8px -5px rgba(0, 0, 0, 0.85);
+	}
 	div.full-name {
 		clear: both;
 		color: black;
@@ -49,9 +58,6 @@ div.description .company {
 	}	
 	li.tooltip-person {
 		color: black;
-		padding-bottom: 10px;
-		padding-left: 30px;
-		padding-right: 30px;
 	}
 	div.links {
 		clear: left;
