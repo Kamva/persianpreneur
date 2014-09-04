@@ -1,5 +1,3 @@
-<% title "PersianPreneur" %>
-
 <div class="main">
   <section id="main-section">
     <div class="row">
@@ -18,10 +16,9 @@
             They are hardworking smart people. You can find a list of them below.</p>
           </h5>          
         </div>
-          <div id="add-person-button">
-            <%= link_to "Add Yourself To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small radius'] %>            
-          </div>
-
+        <div id="add-person-button">
+          <%= link_to "Add Someone To The List", "#", data: {:'reveal-id' => 'addPersonModal'}, class: ['button small radius'] %>
+        </div>
         <div id="addPersonModal" class="reveal-modal" data-reveal>
           <% @person = Person.new %>
           <%= render partial: '/people/form' %>
