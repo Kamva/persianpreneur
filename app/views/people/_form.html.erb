@@ -62,15 +62,9 @@
   </div>  
   <div class="row">
     <div class="small-12 columns">
-      <% if :profile_picture.blank? %>
-        <%= f.label :profile_picture %>
-        <%= f.file_field :profile_picture, required: '' %> 
-      <% end %>			
-      <% if not :profile_picture.blank? %>
-        <%= f.label :profile_picture, "Change Profile Picture", required: '' %>
-        <%= content_tag(:small, "Upload a picture.", class:"error") %>
-        <%= f.file_field :profile_picture %>
-      <% end %>
+      <%= f.label :profile_picture, 'Picture' %>
+      <%= f.file_field :profile_picture if @person.profile_picture? %>
+      <%= f.file_field :profile_picture, required: '' unless @person.profile_picture? %>
     </div>
   </div>
   <% if logged_in? %>
@@ -89,7 +83,7 @@
   <% end %>
   <div class="row">
     <div class="small-4 columns small-centered">
-      <%= f.submit "Add Me To The List", class: "button tiny radius" %>
+      <%= f.submit "Add To The List", class: "button tiny radius" %>
     </div>
   </div>
 <% end %>
