@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :admins
   resource :admin_sessions, only: [:new, :create, :destroy]
   get '/about' => 'static_pages#about', as: :about_page
-  get '/contact' => 'static_pages#contact_new', as: :contact_page
-  match '/contact' => 'static_pages#contact_send', via: [:post]
+  # get '/contact' => 'static_pages#contact_new', as: :contact_page
+  # match '/contact' => 'static_pages#contact_send', via: [:post]
   get 'admin/manage/people' => 'admins#manage'
   get 'admin/manage/admins' => 'admins#index'
   get '/admin/login' => 'admin_sessions#new'
