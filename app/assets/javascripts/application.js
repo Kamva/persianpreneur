@@ -18,4 +18,3 @@
 
 $(function(){ $(document).foundation(); });
 $(function(){ $('#person-birthday').fdatepicker({format:'yyyy-mm-dd'}); });
-$(function(){ var bLazy = new Blazy(); });

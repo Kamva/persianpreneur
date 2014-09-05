@@ -33,7 +33,7 @@
       <% @people.each do |person| %>
               <li class="tooltip-person">
                 <div class="image-wrapper">
-                  <%= image_tag '', 'data-src' => asset_url(person.profile_picture.thumb.url), class: 'profile-picture b-lazy', alt: "#{person.full_name}" %>
+                  <%= image_tag asset_url(person.profile_picture.thumb.url), class: 'profile-picture', alt: "#{person.full_name}" %>
                 </div>
                 <div class="hide-for-medium-up tipcontent">
                   <div class="links show-for-medium-up">              
