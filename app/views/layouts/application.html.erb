@@ -35,7 +35,7 @@
               <li><%= link_to 'Home', root_path %></li>
               <% unless logged_in? %>
                 <li><%= link_to 'About', about_page_path %></li>
-                <li><%= link_to 'Contact', contact_page_path %></li>
+                <li><a href="mailto:hadi.farnoud@gmail.com">Contact</a></li>
                 <li><%= link_to 'Twitter', 'http://twitter.com/persianpreneur', target: '_blank' %></li>
               <% end %>
               <% if logged_in? %>
