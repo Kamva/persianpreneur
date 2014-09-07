@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-
+	caches_page :index
 	before_filter :require_login, except: [:new, :create, :index]
 
 	include PeopleHelper
@@ -35,6 +35,7 @@ class PeopleController < ApplicationController
 	def update
 		@person = Person.find(params[:id])
 		if @person.update(person_params)
+			expire_page action: 'index'
 			redirect_to admin_manage_people_path
 			flash.notice = "Person '#{@person.full_name}' was successfully updated."
 		else
@@ -44,6 +45,7 @@ class PeopleController < ApplicationController
 
 	def destroy
 		@person = Person.find(params[:id]).destroy
+		expire_page action: 'index'
 		flash.notice = "Person '#{@person.full_name}' was successfully destroyed."
 		redirect_to admin_manage_people_path
 	end

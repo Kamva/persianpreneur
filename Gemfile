@@ -45,6 +45,7 @@ gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'actionpack-page_caching'
 gem 'simple_captcha2'
 gem 'mail_form'
 gem 'colored'
