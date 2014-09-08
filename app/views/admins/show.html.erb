@@ -10,6 +10,6 @@
 		<%= link_to("Edit", edit_admin_path(@admin), class: "button tiny radius success") %>
 	</div>
 	<div class="medium-11 columns">
-		<%= link_to("Destroy", "/admins/#{@admin.id}/destroy", method: :delete, class: "button tiny radius alert") %>
+		<%= link_to("Destroy", "/admins/#{@admin.id}/destroy", method: :delete, class: "button tiny radius alert", data: {confirm: "Are you sure you want to destroy Admin \"#{@admin.email}\"?" }) %>
 	</div>
 </div>

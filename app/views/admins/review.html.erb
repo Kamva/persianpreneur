@@ -22,7 +22,7 @@
               <td><%= person.full_name %></td>
               <td><%= link_to 'Show', person %></td>
               <td><%= link_to 'Edit', edit_person_path(person) %></td>
-              <td><%= link_to 'Destroy', person, method: :delete %></td>
+              <td><%= link_to 'Destroy', person, method: :delete, data: {confirm: "Are you sure you want to destroy Person \"#{person.full_name}\"?" } %></td>
               <td><%= link_to 'Publish', "/admin/publish/#{person.id}" %></td>
             </tr>
           <% end %>
