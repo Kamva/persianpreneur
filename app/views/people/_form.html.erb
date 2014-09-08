@@ -1,4 +1,15 @@
 <%= form_for(@person, data: {abide: ''}) do |f| %>
+  <% if @person.errors.any? %>
+    <div class="row">
+      <div class="small-12 columns" id="person-error">  
+        <ul>
+          <% @person.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
   <div class="row">
     <div class="small-12 columns">
         <%= f.label :full_name %>
@@ -8,63 +19,66 @@
   </div>
   <div class="row">
     <div class="small-12 columns">
+      <div class="small-12 large-6 columns">
+        <%= f.check_box :investor %>
+        <%= f.label :investor %>
+      </div>
+      <div class="small-12 large-6 columns large-pull-4">
+        <%= f.check_box :entrepreneur %>
+        <%= f.label :entrepreneur %>        
+      </div>
+    </div>
+  </div>    
+  <div class="row">
+    <div class="small-12 large-6 columns">
       <%= f.label :description %>
-      <%= f.text_area :description, "rows" => 3, placeholder: 'lorem ipsum', required: '' %>
+      <%= f.text_area :description, "rows" => 4, placeholder: 'lorem ipsum', required: '' %>
       <%= content_tag(:small, "Please enter a short bio about this person.", class: "error") %>
     </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-			<%= f.check_box :investor %>
-			<%= f.label :investor %>
-      <%= f.check_box :entrepreneur %>
-      <%= f.label :entrepreneur %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-      <%= f.label :company %>
-      <%= f.text_field :company %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-			<%= f.label :birth_date %>
-			<%= f.text_field :birth_date, placeholder: 'YYYY-MM-DD', pattern: 'date', id: 'person-birthday', data:'mm-dd-yy' %>
-    </div>
-  </div>  
-  <div class="row">
-    <div class="small-12 columns">
-			<%= f.label :location %>
-			<%= f.text_field :location, placeholder: 'Silicon Valley, CA', required:'' %>
+    <div class="small-12 large-6 columns">
+      <%= f.label :location %>
+      <%= f.text_field :location, placeholder: 'Silicon Valley, CA', required:'' %>
       <%= content_tag(:small, "We must know where this person lives. At least the country.", class: "error") %>
     </div>
+    <div class="small-12 large-6 columns">
+      <%= f.label :company %>
+      <%= f.text_field :company %>
+    </div>            
   </div>
   <div class="row">
-    <div class="small-12 columns">
-			<%= f.label :website %>
-			<%= f.text_field :website, placeholder: 'http://sherpa.com/', pattern: 'url' %>
+  </div>
+  <div class="row">
+    <div class="small-12 large-6 columns">
+   <%= f.label :website %>
+   <%= f.text_field :website, placeholder: 'http://sherpa.com/', pattern: 'url' %>
       <%= content_tag(:small, "e.g. http://sharpa.com/", class:"error") %>
     </div>
+    <div class="small-12 large-6 columns">
+      <%= f.label :twitter_handle, "Twitter" %>
+      <%= f.text_field :twitter_handle, placeholder: '@shervin' %>
+    </div>    
   </div>
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 large-6 columns">
       <%= f.label :linkedin_profile %>
       <%= f.text_field :linkedin_profile, placeholder: 'http://linkedin.com/in/shervin', pattern: 'url' %>
     </div>
-  </div> 
-  <div class="row">
-    <div class="small-12 columns">
-      <%= f.label :twitter_handle, "Twitter" %>
-      <%= f.text_field :twitter_handle, placeholder: '@shervin' %>
+    <div class="small-12 large-6 columns">
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder: 'shervin@example.com', type: "email" %>
+      <%#= content_tag(:small, 'We do not display or share your email with anyone.') %>
     </div>
-  </div>  
+  </div>
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 large-6 columns">
+      <%= f.label :birth_date %>
+      <%= f.text_field :birth_date, placeholder: 'YYYY-MM-DD', pattern: 'date', id: 'person-birthday', data:'mm-dd-yy' %>
+    </div>
+    <div class="small-12 large-6 columns">
       <%= f.label :profile_picture, 'Picture' %>
       <%= f.file_field :profile_picture if @person.profile_picture? %>
       <%= f.file_field :profile_picture, required: '' unless @person.profile_picture? %>
-    </div>
+    </div>    
   </div>
   <% if logged_in? %>
     <div class="row">
@@ -75,14 +89,14 @@
     </div>
     <div class="row">
       <div class="small-12 columns">
-  			<%= f.check_box :published %>
-  			<%= f.label :published %>
+     <%= f.check_box :published %>
+     <%= f.label :published %>
       </div>
     </div>
   <% end %>
   <div class="row">
-    <div class="small-4 columns small-centered">
-      <%= f.submit "Add To The List", class: "button tiny radius" %>
+    <div class="small-10 large-4 columns small-centered">
+      <%= f.submit @edit ? "Update Person" : "Add To The List", class: "button small radius expand" %>
     </div>
   </div>
 <% end %>

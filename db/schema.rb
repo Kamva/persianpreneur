@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831141400) do
+ActiveRecord::Schema.define(version: 20140908182713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140831141400) do
     t.string   "linkedin_profile"
     t.integer  "position"
     t.string   "company"
+    t.string   "email"
   end
 
   create_table "simple_captcha_data", force: true do |t|
