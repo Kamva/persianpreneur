@@ -1299,6 +1299,7 @@
 
 $block-grid-default-spacing: 0;
 $reveal-default-width: 50%;
+$reveal-position-top: rem-calc(10);
 
 @import 'foundation';
 @import 'foundation-datetimepicker';
