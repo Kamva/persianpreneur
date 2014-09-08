@@ -4,7 +4,6 @@ class Person < ActiveRecord::Base
 	
 	validates_presence_of :profile_picture
 	validates :full_name, :presence => true, :uniqueness => true
-	# validates :birth_date, :presence => true
-	# validates :location, :presence => true
+	validates :location, :presence => true
 
 end
