@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
 
 	def index
 		@people = Person.where(published: true).order(:position)
+		fresh_when etag: [current_user, @people], last_modified: @people.maximum(:updated_at)
 	end
 
 	def show

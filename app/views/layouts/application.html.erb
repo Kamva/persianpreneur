@@ -45,21 +45,21 @@
             </ul>  
           </aside>
         </div>
-        <% if logged_in? %>
-          <div class="show-for-large-up">          
-            <%= render partial: 'layouts/admin_top_bar' %>
-          </div>
-        <% end %>
-        <% if flash.notice %>
-          <div class="row">
-            <div class="8-small columns">          
-              <div data-alert class="alert-box secondary">
-                <%= flash.notice %>
-                <a href="#" class="close">&times</a>
+          <% if logged_in? %>
+            <div class="show-for-large-up">          
+              <%= render partial: 'layouts/admin_top_bar' %>
+            </div>
+          <% end %>
+          <% if flash.notice %>  
+            <div class="row">
+              <div class="8-small columns">          
+                <div data-alert class="alert-box secondary">
+                  <%= flash.notice %>
+                  <a href="#" class="close">&times</a>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>        
+          <% end %>        
         <div id="wrapper">
           <%= yield %>
         </div>

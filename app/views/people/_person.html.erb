@@ -1,0 +1,45 @@
+<li class="tooltip-person">
+  <div class="image-wrapper">
+    <img class="lazy" data-original="<%= asset_url(person.profile_picture.thumb.url) %>" alt="<%= "#{person.full_name}" %>" width="175" height="175">
+    <noscript><%= image_tag asset_url(person.profile_picture.thumb.url), alt: "#{person.full_name}" %></noscript>
+  </div>
+  <div class="hide-for-medium-up tipcontent">
+    <div class="links show-for-medium-up">              
+      <% unless person.website.blank? %>
+        <%= link_to "", person.website, target: "_blank", :class => ['fa', 'fa-home', 'fa-lg'] %>
+      <% end %>
+      <% unless person.linkedin_profile.blank? %>
+        <%= link_to "", "#{person.linkedin_profile}", target: "_blank", :class => ['fa', 'fa-linkedin'  , 'fa-lg'] %>
+      <% end %>
+      <% unless person.twitter_handle.blank? %>
+        <%= link_to "", "http://twitter.com/#{person.twitter_handle}", target: "_blank", :class => ['fa', 'fa-twitter', 'fa-lg'] %>
+      <% end %>
+    </div>
+    <div class="full-name">
+      <%= person.full_name + (person.birth_date.blank? ? "" : ", ") %>
+      <% unless person.birth_date.blank? %>
+        <%= Time.now.utc.to_date.year - person.birth_date.year - (person.birth_date.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0) %> 
+      <% end %>
+    </div>
+    <div class="links hide-for-medium-up">              
+      <% unless person.website.blank? %>
+        <%= link_to "", person.website, target: "_blank", :class => ['fa', 'fa-home', 'fa-lg'] %>
+      <% end %>
+      <% unless person.linkedin_profile.blank? %>
+        <%= link_to "", "#{person.linkedin_profile}", target: "_blank", :class => ['fa', 'fa-linkedin'  , 'fa-lg'] %>
+      <% end %>
+      <% unless person.twitter_handle.blank? %>
+        <%= link_to "", "http://twitter.com/#{person.twitter_handle}", target: "_blank", :class => ['fa', 'fa-twitter', 'fa-lg'] %>
+      <% end %>
+    </div>                  
+    <div class="description">
+      <% unless person.company.blank? %>
+        <div class="company">
+          <%= person.company %>
+        </div>
+      <% end %>
+      <%= person.description %>
+      <br/><p><%= person.location %></p>
+    </div>
+  </div>
+</li>
