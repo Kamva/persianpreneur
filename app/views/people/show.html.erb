@@ -56,9 +56,9 @@
 </div>
 <div class="row"> 
 	<div class="medium-1 columns">
-		<%= link_to("Edit", edit_person_path(@person), class: "button tiny radius success") %>
+		<%= link_to("Edit", edit_person_path(@person), class: "button small radius success") %>
 	</div>
 	<div class="medium-11 columns">
-		<%= link_to("Destroy", "/people/#{@person.id}/destroy", method: :delete, class: "button tiny radius alert", data: {confirm: "Are you sure you want to destroy Person \"#{@person.full_name}\"?" }) %>
+		<%= link_to("Destroy", "/people/#{@person.id}/destroy", method: :delete, class: "button small radius alert", data: {confirm: "Are you sure you want to destroy Person \"#{@person.full_name}\"?" }) %>
 	</div>
 </div>
