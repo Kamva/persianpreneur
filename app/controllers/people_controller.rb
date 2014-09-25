@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
 	def new
 		@person = Person.new		
 		@person.published = false
-		@person.position = Person.all.length + 1
+		@person.position = Person.where(published: true).size + 1
 	end
 
 	def create
@@ -30,6 +30,7 @@ class PeopleController < ApplicationController
 
 	def edit
 		@person = Person.find(params[:id])
+		@person.position = Person.where(published: true).size + 1
 		@edit = true
 	end
 
