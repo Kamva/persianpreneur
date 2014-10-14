@@ -40,15 +40,21 @@ gem 'capistrano-rbenv', github: "capistrano/rbenv"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',                          group: :development
-gem 'better_errors',           group: :development
-gem 'binding_of_caller',       group: :development
-gem 'meta_request',                    group: :development
-gem 'pry-rails', group: :development
+gem 'mail_form'
 
-#production
-gem 'rails_12factor', group: :production
-gem 'pg', group: :production
+group :development do
+       # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+       gem 'spring'
+       gem 'better_errors'
+       gem 'binding_of_caller'
+       gem 'meta_request'
+       gem 'pry-rails'
+end
+
+group :production do
+       gem 'rails_12factor'
+       gem 'pg'
+end
 
 gem 'colored'
 gem 'foundation-rails'
