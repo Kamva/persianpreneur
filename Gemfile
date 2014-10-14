@@ -25,12 +25,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',				group: :development
-gem 'better_errors',		group: :development
-gem 'binding_of_caller',	group: :development
-gem 'meta_request',			group: :development
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,7 +39,21 @@ gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'mail_form'
+
+group :development do
+	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+	gem 'spring'
+	gem 'better_errors'
+	gem 'binding_of_caller'
+	gem 'meta_request'
+	gem 'pry-rails'
+end
+
+group :production do
+	gem 'rails_12factor'
+	gem 'pg'
+end
+
 gem 'colored'
 gem 'foundation-rails'
 gem 'foundation-datetimepicker-rails'
@@ -53,8 +61,4 @@ gem 'sorcery'
 gem 'carrierwave'
 gem 'rmagick', '>=2.13.3',:require => 'RMagick'
 gem 'font-awesome-sass'
-# gem 'sqlite3'
 
-#production
-gem 'rails_12factor',		group: :production
-gem 'pg',					group: :production

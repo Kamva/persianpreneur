@@ -40,6 +40,23 @@ div.description .company {
 	margin-bottom: 5px;
 }
 
+label#person-description-label {
+	float: left;
+}
+
+span#charcounter {
+	float: right;
+	display: block;
+	font-size: 0.875rem;
+	color: #4d4d4d;
+	line-height: 1.5;
+	opacity: 0.5;
+}
+
+span.zero-chars-left#charcounter {
+	color: red;
+}
+
 @media (max-width: 641px) {
 	div.image-wrapper {
 		text-align: center;

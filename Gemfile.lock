@@ -98,13 +98,11 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mail_form (1.5.0)
-      actionmailer (>= 3.2, < 5)
-      activemodel (>= 3.2, < 5)
     meta_request (0.3.4)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
+    method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -122,6 +120,12 @@ GEM
       rack (~> 1.2)
     pg (0.17.1)
     polyglot (0.3.5)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
@@ -162,6 +166,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     sorcery (0.8.6)
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
@@ -220,9 +225,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
-  mail_form
   meta_request
   pg
+  pry-rails
   rails (= 4.1.1)
   rails_12factor
   rmagick (>= 2.13.3)

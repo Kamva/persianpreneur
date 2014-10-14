@@ -30,8 +30,20 @@ function resizeHandler() {
 	}
 }
 
+
+function descCharCounter() {
+	var leftChars = $('#person_description')[0].getAttribute('maxlength') - $('#person_description').val().length;
+	if (leftChars == 0) $('#charcounter').addClass('zero-chars-left');
+	if (leftChars > 0) $('#charcounter').removeClass('zero-chars-left');
+	$('#charcounter').text(leftChars);
+}
+
+
 $(document).ready(function() {
 	resizeHandler();
+	descCharCounter();
+	$('#person_description').change(descCharCounter);
+	$('#person_description').keyup(descCharCounter);
 });
 $(window).resize(resizeHandler);
 

@@ -31,8 +31,9 @@
   </div>    
   <div class="row">
     <div class="small-12 large-6 columns">
-      <%= f.label :description %>
-      <%= f.text_area :description, "rows" => 4, placeholder: 'lorem ipsum', required: '' %>
+      <%= f.label :description, id: "person-description-label" %>
+      <span id="charcounter"></span>
+      <%= f.text_area :description, rows: "4", maxlength: "175", placeholder: 'lorem ipsum', required: '' %>
       <%= content_tag(:small, "Please enter a short bio about this person.", class: "error") %>
     </div>
     <div class="small-12 large-6 columns">
@@ -66,7 +67,6 @@
     <div class="small-12 large-6 columns">
       <%= f.label :email %>
       <%= f.text_field :email, placeholder: 'shervin@example.com', type: "email" %>
-      <%#= content_tag(:small, 'We do not display or share your email with anyone.') %>
     </div>
   </div>
   <div class="row">
