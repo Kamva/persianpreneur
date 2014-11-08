@@ -1,3 +1,4 @@
+[![Codacy Badge](https://www.codacy.com/project/badge/6d272da20346454084daca2f37381349)](https://www.codacy.com)
 #What is Persianpreneur?
 
 It's a list of awesome Persian entrepreneurs doing great work around the world. It's inspired by Beggars.co idea. We didn't know PHP so we rewrote the whole thing in Ruby on Rails.
