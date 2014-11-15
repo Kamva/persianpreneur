@@ -30,6 +30,15 @@ function resizeHandler() {
 	}
 }
 
+$(function() {
+	$('#manage-people').sortable({
+		axis: 'y',
+		handle: '.handle',
+		update: function() {
+		  $.post($(this).data('update-url'), $(this).sortable('serialize'));
+		}
+	});
+});
 
 function descCharCounter() {
 	var leftChars = $('#person_description')[0].getAttribute('maxlength') - $('#person_description').val().length;
@@ -41,18 +50,10 @@ function descCharCounter() {
 
 $(document).ready(function() {
 	resizeHandler();
-	descCharCounter();
-	$('#person_description').change(descCharCounter);
-	$('#person_description').keyup(descCharCounter);
+	if (document.getElementById('#manage-people')) {
+		descCharCounter();
+		$('#person_description').change(descCharCounter);
+		$('#person_description').keyup(descCharCounter);
+	}
 });
 $(window).resize(resizeHandler);
-
-$(function() {
-	$('#manage-people').sortable({
-		axis: 'y',
-		handle: '.handle',
-		update: function() {
-		  $.post($(this).data('update-url'), $(this).sortable('serialize'));
-		}
-	});
-});
