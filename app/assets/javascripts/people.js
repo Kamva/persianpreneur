@@ -50,7 +50,8 @@ function descCharCounter() {
 
 $(document).ready(function() {
 	resizeHandler();
-	if (document.getElementById('#manage-people')) {
+	var managePeople = document.getElementById('#manage-people');
+	if (typeof managePeople != undefined) {
 		descCharCounter();
 		$('#person_description').change(descCharCounter);
 		$('#person_description').keyup(descCharCounter);
