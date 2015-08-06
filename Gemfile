@@ -57,7 +57,7 @@ group :production do
 end
 
 gem 'colored'
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.3.3.0'
 gem 'foundation-datetimepicker-rails'
 gem 'sorcery'
 gem 'carrierwave'
