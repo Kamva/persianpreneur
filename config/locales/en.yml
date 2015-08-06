@@ -27,3 +27,4 @@ en:
     message:
       default: "Secret Code did not match with the Image"
       user: "The secret Image and code were different"
+

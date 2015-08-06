@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-	root to: "people#index"
+  root to: "people#index"
   resources :people do
     collection { post :sort }
   end

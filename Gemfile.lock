@@ -71,9 +71,10 @@ GEM
     colored (1.2)
     colorize (0.7.7)
     debug_inspector (0.0.2)
-    dotenv (1.0.2)
-    dotenv-deployment (0.3.0)
-      dotenv (~> 1.0)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     erubis (2.7.0)
     execjs (2.5.2)
     faraday (0.9.1)
@@ -219,7 +220,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   colored
-  dotenv-deployment
+  dotenv-rails
   execjs
   font-awesome-sass
   foundation-datetimepicker-rails
