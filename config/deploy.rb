@@ -9,7 +9,7 @@ set :repo_url, 'git@github.com:hadifarnoud/persianpreneur.git'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/persianpreneur'
-
+set :deploy_user, "deploy"
 set :linked_files, %w{config/database.yml .env config/secrets.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/assets/images}
 # https://github.com/capistrano/bundler/issues/45
