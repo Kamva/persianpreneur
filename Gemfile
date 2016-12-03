@@ -54,6 +54,6 @@ gem 'foundation-rails', '~> 5.3.3.0'
 gem 'foundation-datetimepicker-rails'
 gem 'sorcery'
 gem 'carrierwave'
-gem 'rmagick', '>=2.13.3'
+gem 'rmagick'
 gem 'font-awesome-sass'
 

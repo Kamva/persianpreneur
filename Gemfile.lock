@@ -167,7 +167,7 @@ GEM
     rake (11.3.0)
     rdoc (4.2.0)
     ref (2.0.0)
-    rmagick (2.15.3)
+    rmagick (2.16.0)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -231,7 +231,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.7)
   rails_12factor
-  rmagick (>= 2.13.3)
+  rmagick
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sorcery
