@@ -7,8 +7,7 @@ WORKDIR src
 COPY . .
 
 RUN bundle install
-RUN touch log/production.log
-RUN chmod 666 log/production.log
+RUN mkdir -p log
 RUN RAILS_ENV=production rake assets:precompile
 
 EXPOSE 8080
