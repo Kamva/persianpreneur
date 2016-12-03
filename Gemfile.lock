@@ -80,6 +80,7 @@ GEM
     json (1.8.3)
     jwt (1.5.1)
     kgio (2.9.3)
+    libv8 (3.16.14.15)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mail_form (1.5.1)
@@ -138,6 +139,7 @@ GEM
     raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    ref (2.0.0)
     rmagick (2.15.3)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -163,6 +165,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -186,6 +191,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   colored
   dotenv-rails
+  execjs
   font-awesome-sass
   foundation-datetimepicker-rails
   foundation-rails (~> 5.3.3.0)
@@ -203,6 +209,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sorcery
   spring
+  therubyracer
   uglifier (>= 1.3.0)
   unicorn
 
