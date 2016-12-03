@@ -13,45 +13,33 @@
 
 ActiveRecord::Schema.define(version: 20140908182713) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "admins", force: true do |t|
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+  create_table "admins", force: :cascade do |t|
+    t.string   "email",            limit: 255, null: false
+    t.string   "crypted_password", limit: 255, null: false
+    t.string   "salt",             limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
 
-  create_table "people", force: true do |t|
-    t.string   "full_name"
-    t.text     "description"
+  create_table "people", force: :cascade do |t|
+    t.string   "full_name",        limit: 255
+    t.text     "description",      limit: 65535
     t.boolean  "investor"
     t.boolean  "entrepreneur"
-    t.string   "website"
-    t.string   "profile_picture"
+    t.string   "website",          limit: 255
+    t.string   "profile_picture",  limit: 255
     t.date     "birth_date"
-    t.string   "location"
-    t.string   "twitter_handle"
-    t.boolean  "published",        default: false
+    t.string   "location",         limit: 255
+    t.string   "twitter_handle",   limit: 255
+    t.boolean  "published",                      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "linkedin_profile"
-    t.integer  "position"
-    t.string   "company"
-    t.string   "email"
+    t.string   "linkedin_profile", limit: 255
+    t.integer  "position",         limit: 4
+    t.string   "company",          limit: 255
+    t.string   "email",            limit: 255
   end
-
-  create_table "simple_captcha_data", force: true do |t|
-    t.string   "key",        limit: 40
-    t.string   "value",      limit: 6
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
 end

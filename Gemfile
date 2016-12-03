@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.9'
+gem 'rails', '4.2.7'
 # Use mysql as the database for Active Record
-# gem 'mysql2'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,7 +47,6 @@ end
 
 group :production do
        gem 'rails_12factor'
-       gem 'pg'
 end
 
 gem 'colored'
