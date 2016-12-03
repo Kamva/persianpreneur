@@ -11,11 +11,6 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
-# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
-config/initializers/secret_token.rb
-database.yml
-
-
 ## Environment normalisation:
 /.bundle
 /vendor/bundle
@@ -29,6 +24,5 @@ database.yml
 
 #environment settings
 .env
-config/secrets.yml
 
 public/assets/images
