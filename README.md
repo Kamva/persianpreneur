@@ -28,7 +28,7 @@ Login to https://dashboard.abarcloud.com/console/command-line to download the CL
 Get your CLI login token from https://dashboard.abarcloud.com/console/command-line
 
 Login to CLI:
-oc login https://dashboard.abarcloud.com --token=<my_token>
+`oc login https://dashboard.abarcloud.com --token=<my_token>`
 
 Create a new project:
 `oc new-project my-new-project`
