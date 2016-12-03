@@ -37,7 +37,7 @@ Create the app, using Docker:
 `oc new-app --strategy=docker https://github.com/KamvaHQ/persianpreneur.git`
 
 Patch the build configuration so it doesn't use any base images, and creates a new image from scratch:
-`oc patch bc/persianpreneur -p '{"spec":{"strategy":{"dockerStrategy":null}}}'
+`oc patch bc/persianpreneur -p '{"spec":{"strategy":{"dockerStrategy":null}}}'`
 
 Start a new build as we changed the build config above:
 `oc start-build persianpreneur`
