@@ -16,7 +16,7 @@ foreman start
 
 ## Tasks
 
-You can import a list of people by `rake db:person:import` You can also wipe off the database of 'persons' by `rake db:person:clear`
+You can import a list of people by `rake db:person:import` You can also wipe off the database of 'persons' by `rake db:person:clear` 
 
 ## Deploy on Heroku
 
