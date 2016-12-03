@@ -1,5 +1,6 @@
 FROM ruby:latest
 
+USER root
 RUN mkdir src
 WORKDIR src
 COPY . .
