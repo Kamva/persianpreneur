@@ -53,7 +53,7 @@ gem 'colored'
 gem 'foundation-rails', '~> 5.3.3.0'
 gem 'foundation-datetimepicker-rails'
 gem 'sorcery'
-gem 'carrierwave'
+gem 'carrierwave', '~>0.11.2'
 gem 'rmagick'
 gem 'font-awesome-sass'
 
