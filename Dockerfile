@@ -10,12 +10,11 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 RUN bundle install
 
-RUN chmod -R g+rw /src
-
-EXPOSE 8080
-CMD bundle exec unicorn -p 8080 -c ./config/unicorn.rb
-
 COPY . .
 RUN RAILS_ENV=production rake assets:precompile
 
+RUN chmod -R g+rw /src
 USER 1001
+
+EXPOSE 8080
+CMD bundle exec unicorn -p 8080 -c ./config/unicorn.rb
