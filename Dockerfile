@@ -9,7 +9,7 @@ COPY . .
 RUN bundle install
 RUN RAILS_ENV=production rake assets:precompile
 
-RUN chmod -R g+rw /src/log /src/tmp
+RUN chmod -R g+rw /src
 
 USER 1001
 EXPOSE 8080
