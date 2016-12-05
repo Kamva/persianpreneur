@@ -39,7 +39,8 @@ Create the app, using Docker:
 Patch the build configuration so it doesn't use any base images, and creates a new image from scratch:
 `oc patch bc/persianpreneur -p '{"spec":{"strategy":{"dockerStrategy":null}}}'`
 
-Start a new build as we changed the build config above:
+Stop the old build, and start a new build as we changed the build config above:
+`oc cancel-build persianpreneur-1`
 `oc start-build persianpreneur`
 
 Create a route so the service is exposed externally:
