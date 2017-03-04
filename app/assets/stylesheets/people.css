@@ -78,6 +78,7 @@ span.zero-chars-left#charcounter {
 	}	
 	li.tooltip-person {
 		color: black;
+		padding: 0 !important;
 	}
 	div.links {
 		clear: left;
