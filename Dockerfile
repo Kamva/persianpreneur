@@ -1,4 +1,4 @@
-FROM ruby:latest
+FROM ruby:2.3.3
 
 RUN mkdir /src && \
     mkdir /src/log /src/tmp && \
