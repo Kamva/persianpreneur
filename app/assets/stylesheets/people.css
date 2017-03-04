@@ -56,7 +56,12 @@ span#charcounter {
 span.zero-chars-left#charcounter {
 	color: red;
 }
-
+@media (min-width: 641px) {
+	li.tooltip-person {
+		color: black;
+		padding: 0 !important;
+	}
+}
 @media (max-width: 641px) {
 	div.image-wrapper {
 		text-align: center;
