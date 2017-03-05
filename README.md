@@ -16,44 +16,15 @@ foreman start
 
 ## Tasks
 
-You can import a list of people by `rake db:person:import` You can also wipe off the database of 'persons' by `rake db:person:clear` 
+You can import a list of people by `rake db:person:import` You can also wipe off the database of 'persons' by `rake db:person:clear`
+
+## Deploy on AbarCloud
+
+Follow the [quick start guide](https://en-docs.abarcloud.com/quickstart.html) to deploy it. You can also [add a custom domain with SSL](https://en-docs.abarcloud.com/deployment/custom-domain-names.html).
 
 ## Deploy on Heroku
 
 You need to remove `therubyracer` and `execjs` gems. Heroku doesn't need a js runtime.
-
-## Deploy on AbarCloud
-Login to https://dashboard.abarcloud.com/console/command-line to download the CLI.
-
-Get your CLI login token from https://dashboard.abarcloud.com/console/command-line
-
-Login to CLI:
-`oc login https://dashboard.abarcloud.com --token=<my_token>`
-
-Create a new project:
-`oc new-project my-new-project`
-
-Create the app, using Docker:
-`oc new-app --strategy=docker https://github.com/KamvaHQ/persianpreneur.git`
-
-Patch the build configuration so it doesn't use any base images, and creates a new image from scratch:
-`oc patch bc/persianpreneur -p '{"spec":{"strategy":{"dockerStrategy":null}}}'`
-
-Stop the old build, and start a new build as we changed the build config above:
-`oc cancel-build persianpreneur-1`
-`oc start-build persianpreneur`
-
-Create a route so the service is exposed externally:
-`oc expose svc/persianpreneur`
-
-If you want HTTPS:
-`oc patch route/persianpreneur -p '{"spec":{"tls":{"termination":"edge","insecureEdgeTerminationPolicy":"Redirect"}}}'`
-
-Show the route URL:
-`oc get routes`
-
-Get the build logs, once it's finished, it'll trigger a deployment and you can browse to the route:
-`oc logs -f bc/persianpreneur`
 
 ## Deploy elsewhere
 Alternatively, you can use nodejs instead of `execjs`. It's was just more convenient to add a gem rather than asking all to install nodejs.
