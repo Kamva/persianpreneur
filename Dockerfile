@@ -8,11 +8,11 @@ COPY Gemfile.lock Gemfile.lock
 RUN bundle install
 
 COPY . /tmp/app
-RUN chmod -R ug+rwx /tmp/app && \
+RUN cd /tmp/app && RAILS_ENV=production rake assets:precompile && \
+    chmod -R ug+rwx /tmp/app && \
     chown -R 1001:0 /tmp/app && \
     cp -rpT /tmp/app /usr/src/app && \
-    rm -rf /tmp/app && \
-    RAILS_ENV=production rake assets:precompile
+    rm -rf /tmp/app
 
 USER 1001
 EXPOSE 8080
