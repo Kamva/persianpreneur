@@ -1,9 +1,6 @@
 FROM ruby:2.3.3
 
-RUN mkdir /src && \
-    mkdir /src/log /src/tmp && \
-    touch /src/log/production.log
-WORKDIR /src
+WORKDIR /usr/src/app
 
 # Optimisation: copy the Gemfiles and bundle install first to enable docker to use cached layers
 COPY Gemfile Gemfile
@@ -13,7 +10,7 @@ RUN bundle install
 COPY . /tmp/app
 RUN chmod -R ug+rwx /tmp/app && \
     chown -R 1001:0 /tmp/app && \
-    cp -rpT /tmp/app /src && \
+    cp -rpT /tmp/app /usr/src/app && \
     rm -rf /tmp/app && \
     RAILS_ENV=production rake assets:precompile
 
