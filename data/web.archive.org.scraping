@@ -1,0 +1,118 @@
+{
+  "AgentName": "web.archive.org",
+  "CreatedOn": "7/8/2016, 9:54:36 PM",
+  "CreatedBy": "Data Scraping Studio Chrome App",
+  "Version": "1.7",
+  "About": "Execute this web scraping agent with Data Scraping Studio desktop app, download free from http://www.datascraping.co",
+  "SourceURL": "https://web.archive.org/web/20160110033729/http://persianpreneur.com/",
+  "Collections": null,
+  "DynamicSelectors": null,
+  "Header": {
+    "Method": "GET",
+    "TimeOut": 6000,
+    "ReadWriteTimeout": 6000,
+    "KeepSameURL": false,
+    "ConnectionAlive": true,
+    "Data": [
+      {
+        "Key": "Accept",
+        "Value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+      },
+      {
+        "Key": "User-Agent",
+        "Value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+      },
+      {
+        "Key": "Accept-Language",
+        "Value": "*"
+      }
+    ]
+  },
+  "Slicer": {
+    "Enabled": false,
+    "Data": []
+  },
+  "Proxy": {
+    "Enabled": false,
+    "RotateEnabled": false,
+    "Rotate": 0,
+    "EnableDynamicProxy": false,
+    "DynamicColumn": null,
+    "Data": []
+  },
+  "Throttling": {
+    "Enabled": false,
+    "DelayType": null,
+    "DelaySeconds": 0,
+    "AutoRedirectEnabled": true,
+    "MaxAutoRedirect": 3
+  },
+  "Limit": {
+    "Enabled": false,
+    "StartAt": 0,
+    "StopAt": 0
+  },
+  "FailRetry": {
+    "Enabled": false,
+    "RetryCount": 0,
+    "DelaySeconds": 0
+  },
+  "RequestViaBrowser": null,
+  "Pagination": null,
+  "Fields": null,
+  "Collection": [
+    {
+      "Name": "Full Name",
+      "Pattern": ".full-name",
+      "ItemNumber": "TEXT",
+      "Position": null,
+      "Visible": true,
+      "CollectionType": "CSS"
+    },
+    {
+      "Name": "Description",
+      "Pattern": ".description",
+      "ItemNumber": "TEXT",
+      "Position": null,
+      "Visible": true,
+      "CollectionType": "CSS"
+    }
+  ],
+  "ModifyOutput": {
+    "Enabled": false,
+    "Script": null
+  },
+  "FormSubmit": {
+    "Enabled": false,
+    "Data": []
+  },
+  "Output": {
+    "Type": null,
+    "Path": null,
+    "FileName": null,
+    "PostDataOnAbortCancel": false,
+    "IncludeHeader": false
+  },
+  "Input": {
+    "Type": "DIRECT",
+    "Path": null,
+    "UrlField": null,
+    "UrlFieldIndex": 0,
+    "FileType": null,
+    "HasHeaders": false,
+    "Data": [
+      {
+        "COLUMN1": "https://web.archive.org/web/20160110033729/http://persianpreneur.com/",
+        "COLUMN2": null,
+        "COLUMN3": null,
+        "COLUMN4": null,
+        "COLUMN5": null,
+        "COLUMN6": null,
+        "COLUMN7": null,
+        "COLUMN8": null,
+        "COLUMN9": null,
+        "COLUMN10": null
+      }
+    ]
+  }
+}
