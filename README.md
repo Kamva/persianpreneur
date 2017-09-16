@@ -18,6 +18,13 @@ foreman start
 
 You can import a list of people by `rake db:person:import` You can also wipe off the database of 'persons' by `rake db:person:clear` 
 
+You can add admin via `rails console`. 
+
+```Ruby
+irb(main):015:0> a=Admin.new(email: 'jon@gmail.com', password: 'asecretpass')
+irb(main):016:0> a.save!
+```
+
 ## Deploy on Heroku
 
 You need to remove `therubyracer` and `execjs` gems. Heroku doesn't need a js runtime.
